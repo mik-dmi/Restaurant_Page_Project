@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'headersFont';
+    src: url('../fonts/DelagioScript.otf');
+   
+}
+
+html,body{
+    margin: 0;
+    
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr auto;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 5rem;
+    font-family: 'headersFont';
+    grid-column: 1 /span2;
+    font-weight: 550;
+}
+
+.sidebar{
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(30, 150, 191);
+    
+}   
+.menuButton{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    padding-left: 20%;
+    margin: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.menuButton:active {
+    /* Change border color to red when clicked */
+    background-color: rgb(27, 126, 159);; /* Change background color to gray when clicked */
+    color: #cce3ea; /* Change text color to white when clicked */
+}
+
+
+.footer{
+    grid-column: 1/span 2;
+    background-color: rgb(218, 210, 210);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.titleInBody{
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.containersHomePage{
+    background-color: aquamarine;
+    width:50rem ;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
