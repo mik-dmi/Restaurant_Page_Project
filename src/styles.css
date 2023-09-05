@@ -1,34 +1,46 @@
 @font-face {
     font-family: 'headersFont';
     src: url('../fonts/DelagioScript.otf');
+
    
 }
 
 html,body{
     margin: 0;
+    background-image: url('../images/background.jpeg'); /* Path to your background image */
+    background-size: cover;
+    
     
 }
 
 #content{
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr auto;
+    grid-template-rows: 1fr auto auto;
 }
 
 .header{
     display: flex;
     justify-content: center;
     padding: 2rem;
-    font-size: 5rem;
+    font-size: 7rem;
     font-family: 'headersFont';
-    grid-column: 1 /span2;
+    color: rgb(220, 139, 67);
     font-weight: 550;
+    filter: brightness(0.5);
+    -webkit-text-stroke: 1px #a37241; /* Outline width and color for webkit browsers */
+    text-stroke: 0.5rem #a37241;
+    
+  
+    
 }
 
 .sidebar{
     display:flex;
     flex-direction: column;
-    background-color: rgb(30, 150, 191);
+    background-color: rgb(168, 156, 118);
+    grid-row: 1 /span2;;
+    padding-top: 6rem;
     
 }   
 .menuButton{
@@ -43,11 +55,12 @@ html,body{
     color: white;
     background-color: transparent;
     border: none;
+    border-radius: 0.5rem;
 }
 
 .menuButton:active {
     /* Change border color to red when clicked */
-    background-color: rgb(27, 126, 159);; /* Change background color to gray when clicked */
+    background-color: rgb(123, 114, 82); /* Change background color to gray when clicked */
     color: #cce3ea; /* Change text color to white when clicked */
 }
 
@@ -65,18 +78,34 @@ html,body{
 .body{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    padding: 2rem;
+
+
     
 }
-
+.textInBody{
+    margin: 0rem;
+}
 .titleInBody{
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin: 0rem;
+    text-align: center;
+    padding-bottom:1em;
+    color: white;
 }
 
 .containersHomePage{
-    background-color: aquamarine;
-    width:50rem ;
+    background-color: rgb(204, 195, 164);
+    font-size: 1.5rem;
+    width:40rem ;
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    border-radius: 0.5rem;
+
 }
+

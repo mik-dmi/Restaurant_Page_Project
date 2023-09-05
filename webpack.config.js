@@ -34,6 +34,17 @@ module: {
         },
       },
     },
+    {
+      test: /\.(png|jpg|jpeg|gif|svg)$/i,
+      use: [
+          {
+              loader: 'file-loader',
+              options: {
+                  outputPath: 'images', // Output directory for images
+              },
+          },
+      ],
+  },
   ],
 }
 };

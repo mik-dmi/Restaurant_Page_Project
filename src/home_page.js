@@ -5,12 +5,12 @@ export const mainPage = ()=>{
     const textInBody = [];
     const dataOfTitleInTheBody = ["Welcome","Oppen Hours","Location"]
     const dataTextInTheBody = ['Discover culinary excellence at Snacks on the Plate.Our restaurant offers a delightful array of globally inspired snacks and dishes. Experience the perfect blend of comfort and flavor with us today.',
-    `<strong>Monday</strong> to Friday: 11:00 AM - 10:00 PM<br>
+    `<strong>Monday to Friday</strong> : 11:00 AM - 10:00 PM<br>
     <strong>Saturday</strong>: 12:00 PM - 11:00 PM<br>
     <strong>Sunday</strong>: 12:00 PM - 9:00 PM
     `, `Snacks on the Plate is conveniently located at:<br>
-    123 Main Street,<br>
-    City, State, ZIP Code<br><br>
+    <strong>123 Main Street,</strong><br>
+    <strong>City, State, ZIP Code</strong><br><br>
     We are situated in the heart of [City], making it easy for you to find us and enjoy our delicious cuisine. We look forward to welcoming you to our restaurant!
     ` ];
 
@@ -65,7 +65,7 @@ export const mainPage = ()=>{
         titleIfBody[i] = document.createElement('p');
         titleIfBody[i].classList = 'titleInBody';
         textInBody[i] = document.createElement('p');
-        textInBody.classList = 'textInBody';
+        textInBody[i].classList = 'textInBody';
         homePageContainers[i].classList = "containersHomePage";
         titleIfBody[i].textContent = dataOfTitleInTheBody[i];
         textInBody[i].innerHTML  = dataTextInTheBody[i];
@@ -87,7 +87,7 @@ export const mainPage = ()=>{
     galleryButton.textContent = 'Gallery';
     contactButton.textContent = 'Contact';
 
-    footerContainer.textContent = "Copy Rights"
+    footerContainer.textContent = "Images from https://unsplash.com/"
     console.log("coococ")
 
 
