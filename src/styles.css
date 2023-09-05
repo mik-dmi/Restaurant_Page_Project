@@ -9,6 +9,8 @@ html,body{
     margin: 0;
     background-image: url('../images/background.jpeg'); /* Path to your background image */
     background-size: cover;
+    height: 100%;
+    
     
     
 }
@@ -16,7 +18,8 @@ html,body{
 #content{
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr auto auto;
+    grid-template-rows:auto auto auto;
+    height: 100%;
 }
 
 .header{
@@ -31,6 +34,7 @@ html,body{
     -webkit-text-stroke: 1px #a37241; /* Outline width and color for webkit browsers */
     text-stroke: 0.5rem #a37241;
     
+    
   
     
 }
@@ -41,6 +45,7 @@ html,body{
     background-color: rgb(168, 156, 118);
     grid-row: 1 /span2;;
     padding-top: 6rem;
+    
     
 }   
 .menuButton{
@@ -56,9 +61,11 @@ html,body{
     background-color: transparent;
     border: none;
     border-radius: 0.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
-.menuButton:active {
+.menuButton.active {
     /* Change border color to red when clicked */
     background-color: rgb(123, 114, 82); /* Change background color to gray when clicked */
     color: #cce3ea; /* Change text color to white when clicked */
@@ -80,7 +87,7 @@ html,body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:1rem;
+    gap:3rem;
     padding: 2rem;
 
 
@@ -88,6 +95,8 @@ html,body{
 }
 .textInBody{
     margin: 0rem;
+    color:#563311;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .titleInBody{
     font-weight: 800;
@@ -96,6 +105,8 @@ html,body{
     text-align: center;
     padding-bottom:1em;
     color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 .containersHomePage{
