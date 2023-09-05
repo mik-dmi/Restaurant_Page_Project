@@ -10,6 +10,7 @@ html,body{
     background-image: url('../images/background.jpeg'); /* Path to your background image */
     background-size: cover;
     height: 100%;
+    width: 100%;
     
     
     
@@ -93,7 +94,7 @@ html,body{
 
     
 }
-.textInBody{
+.textInBody, .priceInBody{
     margin: 0rem;
     color:#563311;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -109,7 +110,7 @@ html,body{
 
 }
 
-.containersHomePage{
+.containersHomePage, .containersMenuPage{
     background-color: rgb(204, 195, 164);
     font-size: 1.5rem;
     width:40rem ;
@@ -120,3 +121,34 @@ html,body{
 
 }
 
+
+.imageInTheMenu{
+    max-width: 20rem;
+    max-height: 20rem;
+    border-radius: 1rem;
+
+}
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.textAndPriceContainer{
+    display: flex;
+}
+
+.priceInBody{
+    font-size: 3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0.5rem;
+}
+.textInBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}

@@ -19,6 +19,8 @@ export const mainPage = ()=>{
     
     while (bodyContainer.firstChild) {
         bodyContainer.removeChild(bodyContainer.firstChild);
+    }    while (bodyContainer.firstChild) {
+        bodyContainer.removeChild(bodyContainer.firstChild);
     }
 
     for(let i = 0; i < 3; i++ ){
