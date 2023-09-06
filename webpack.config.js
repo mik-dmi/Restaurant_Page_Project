@@ -45,6 +45,17 @@ module: {
           },
       ],
   },
+  {
+    test: /\.(png|jpg|jpeg|gif|svg)$/i,
+    use: [
+        {
+            loader: 'file-loader',
+            options: {
+                outputPath: 'images/galleryImages', // Output directory for images
+            },
+        },
+    ],
+},
   ],
 }
 };

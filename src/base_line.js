@@ -26,9 +26,9 @@ export const baseLinePage = ( ) => {
     galleryButton.classList = "menuButton";
     galleryButton.id = "galleryButton";
     
-    const contactButton =  document.createElement('button');
-    contactButton.classList = "menuButton";
-    contactButton.id = "contactButton";
+    //const contactButton =  document.createElement('button');
+    //contactButton.classList = "menuButton";
+    //contactButton.id = "contactButton";
     
     const nameOfRestaurant = document.createElement('div');
     
@@ -42,7 +42,7 @@ export const baseLinePage = ( ) => {
     sidebarContainer.appendChild(homeButton);
     sidebarContainer.appendChild(menuButton);
     sidebarContainer.appendChild(galleryButton);
-    sidebarContainer.appendChild(contactButton);
+    //sidebarContainer.appendChild(contactButton);
    
 
    
@@ -51,7 +51,7 @@ export const baseLinePage = ( ) => {
     homeButton.textContent = 'Home';
     menuButton.textContent = 'Menu';
     galleryButton.textContent = 'Gallery';
-    contactButton.textContent = 'Contact';
+    //contactButton.textContent = 'Contact';
 
     footerContainer.textContent = "Images from https://unsplash.com/"
 
