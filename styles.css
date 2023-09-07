@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'headersFont';
+    src: url('./fonts/DelagioScript.otf');
+
+   
+}
+
+html,body{
+    margin: 0;
+    background-image: url('./images/background.jpeg'); /* Path to your background image */
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    
+    
+    
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows:0.5fr 4fr auto;
+    height: 100%;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 7rem;
+    font-family: 'headersFont';
+    color: rgb(220, 139, 67);
+    font-weight: 550;
+    filter: brightness(0.5);
+    -webkit-text-stroke: 1px #a37241; /* Outline width and color for webkit browsers */
+    text-stroke: 0.5rem #a37241;
+    
+    
+  
+    
+}
+
+.sidebar{
+    display:flex;
+    flex-direction: column;
+    background-color: rgb(168, 156, 118);
+    grid-row: 1 /span2;;
+    padding-top: 6rem;
+    
+    
+}   
+.menuButton{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    padding-left: 20%;
+    margin: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.menuButton.active {
+    /* Change border color to red when clicked */
+    background-color: rgb(123, 114, 82); /* Change background color to gray when clicked */
+    color: #cce3ea; /* Change text color to white when clicked */
+}
+
+
+.footer{
+    grid-column: 1/span 2;
+    background-color: rgb(218, 210, 210);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+    padding: 2rem;
+   
+}
+.textInBody, .priceInBody{
+    margin: 0rem;
+    color:#563311;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.titleInBody{
+    font-weight: 800;
+    font-size: 2rem;
+    margin: 0rem;
+    text-align: center;
+    padding-bottom:1em;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.containersHomePage, .containersMenuPage{
+    background-color: rgb(204, 195, 164);
+    font-size: 1.5rem;
+    width:40rem ;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+}
+
+
+.imageInTheMenu{
+    max-width: 20rem;
+    max-height: 20rem;
+    border-radius: 1rem;
+
+}
+.imageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.textAndPriceContainer{
+    display: flex;
+}
+
+.priceInBody{
+    font-size: 3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 0;
+    padding: 0.8rem;
+}
+.textInBodyMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.titleMenu{
+    font-size: 5rem;
+    font-weight: 600;
+    color:white;
+    background-color: rgb(140, 100, 44);
+    padding: 1rem 6rem 1rem 6rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.galleryGridContainer{
+    display:grid ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.5rem;
+
+}
+
+.galleryGridCell{
+    width: 20rem;
+    max-height: 20rem;
+    border-radius: 1rem;
+}
