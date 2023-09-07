@@ -3,19 +3,19 @@ const drinksData = [
         name: 'Blueberry Smoothie',
         price: "5€",
         description: "A healthy and flavorful smoothie made with blueberries, yogurt, banana, and a touch of honey.",
-        image:'../images/blueberry.jpg'
+        image:'./images/blueberry.jpg'
     },
     {
         name: 'Pina Colada',
         price: "7€",
         description: "A tropical cocktail made with rum, coconut cream, and pineapple juice, often served with a pineapple slice and a maraschino cherry.",
-        image:'../images/pina_colada.jpg'
+        image:'./images/pina_colada.jpg'
     },
     {
         name: 'Chocolate Milkshake',
         price: "6€",
         description: "A creamy and indulgent dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
-        image:'../images/chocolate_milkshake.jpg'
+        image:'./images/chocolate_milkshake.jpg'
     },
 ];
 const foodData = [
@@ -23,25 +23,25 @@ const foodData = [
         name: 'Tropical Fruit Salad',
         price: "12€",
         description: "A refreshing salad with a mix of tropical fruits like pineapple, mango, and kiwi, served with a citrusy dressing. It pairs well with drinks like Mango Lassi and Pina Colada.",
-        image:'../images/tropical_fruit_salad.jpg'
+        image:'./images/tropical_fruit_salad.jpg'
     },
     {
         name: 'Coconut Shrimp',
         price: "16€",
         description: "A creamy and decadent dessert featuring a strawberry topping on a rich cheesecake base. It makes for a sweet ending to a meal, especially after sipping on a Strawberry Daiquiri.",
-        image:'../images/coconut_shrimp.jpg'
+        image:'./images/coconut_shrimp.jpg'
     },
     {
         name: 'Strawberry Cheesecake',
         price: "9€",
         description: "A creamy and indulgent dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
-        image:'../images/strawberry_cheesecake.jpg'
+        image:'./images/strawberry_cheesecake.jpg'
     },
     {
         name: 'Chocolate Fondue',
         price: "7€",
         description: "A dessert option where you can dip fruits, marshmallows, or pieces of cake into a warm, melted chocolate sauce. It's a delightful treat to enjoy alongside a Chocolate Milkshake.",
-        image:'../images/chocolate_fondue.jpg'
+        image:'./images/chocolate_fondue.jpg'
     },
 ];
 

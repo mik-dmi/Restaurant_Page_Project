@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'headersFont';
-    src: url('../fonts/DelagioScript.otf');
+    src: url('./fonts/DelagioScript.otf');
 
    
 }
 
 html,body{
     margin: 0;
-    background-image: url('../images/background.jpeg'); /* Path to your background image */
+    background-image: url('./images/background.jpeg'); /* Path to your background image */
     background-size: cover;
     height: 100%;
     width: 100%;
