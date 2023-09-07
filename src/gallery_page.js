@@ -1,4 +1,4 @@
-const pathForImages = ['../images/galleryImages/image_1.jpg','../images/galleryImages/image_2.jpg','../images/galleryImages/image_3.jpg','../images/galleryImages/image_4.jpg','../images/galleryImages/image_5.jpg','../images/galleryImages/image_6.jpg','../images/galleryImages/image_7.jpg','../images/galleryImages/image_8.jpg','../images/galleryImages/image_9.jpg'];
+const pathForImages = ['./images/galleryImages/image_1.jpg','./images/galleryImages/image_2.jpg','./images/galleryImages/image_3.jpg','./images/galleryImages/image_4.jpg','./images/galleryImages/image_5.jpg','./images/galleryImages/image_6.jpg','./images/galleryImages/image_7.jpg','./images/galleryImages/image_8.jpg','./images/galleryImages/image_9.jpg'];
 
 export const galleryPage = ()=>{
 
