@@ -7,17 +7,22 @@ import {galleryPage} from './gallery_page.js'
 baseLinePage();
 
 
-const menuButtons = document.querySelectorAll('.menuButton');
+const menuButtons = document.querySelectorAll('.dropDownButton');
+
+
+
+
+
 
 menuButtons.forEach(button => {
     button.addEventListener('click', (e)=>{
         menuButtons.forEach(b => b.classList.remove('active'));
-        button.classList.add('active');
+        button.classList.toggle('active');
 
 
 
         if(button.id == 'homeButton') mainPage();
-        if(button.id == 'menuButton') menuPage();
+        if(button.id == 'foodAndDrinks') menuPage();
         if(button.id == 'galleryButton') galleryPage();
     } )
 

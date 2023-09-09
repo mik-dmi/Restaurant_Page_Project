@@ -7,8 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "aux": "git subtree push --prefix dist origin gh-pages"
-    
-
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +14,7 @@
     "@babel/core": "^7.22.15",
     "@babel/preset-env": "^7.22.15",
     "babel-loader": "^9.1.3",
+    "eslint-config-prettier": "^9.0.0",
     "file-loader": "^6.2.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"

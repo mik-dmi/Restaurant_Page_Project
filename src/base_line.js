@@ -14,16 +14,28 @@ export const baseLinePage = ( ) => {
     const sidebarContainer = document.createElement('div');
     sidebarContainer.classList = "sidebar";
 
-    const homeButton = document.createElement('button');
-    homeButton.classList = "menuButton";
-    homeButton.id = 'homeButton';
+    const dropDown = document.createElement('div');
+    dropDown.classList = "dropDown";
+    dropDown.id = "dropDown";
     
-    const menuButton =  document.createElement('button');
-    menuButton.classList = "menuButton";
-    menuButton.id = "menuButton";
+    const dropDownMenu = document.createElement('div');
+    dropDownMenu.classList = "dropDownMenu";
+    dropDownMenu.id = "dropDownMenu";
+
+    const menu = document.createElement('button');
+    menu.classList = "menuButton";
+    menu.id = "menu";
+
+    const homeButton = document.createElement('button');
+    homeButton.classList = "dropDownButton";
+    homeButton.id = "homeButton";
+    
+    const foodAndDrinks =  document.createElement('button');
+    foodAndDrinks.classList = "dropDownButton";
+    foodAndDrinks.id = "foodAndDrinks";
     
     const galleryButton =  document.createElement('button');
-    galleryButton.classList = "menuButton";
+    galleryButton.classList = "dropDownButton";
     galleryButton.id = "galleryButton";
     
     //const contactButton =  document.createElement('button');
@@ -35,24 +47,37 @@ export const baseLinePage = ( ) => {
    
     mainContainer.appendChild(headerContainer); //main page template 
     mainContainer.appendChild(sidebarContainer); 
+    sidebarContainer.appendChild(dropDown);
+    dropDown.appendChild(menu);
+    dropDown.appendChild(dropDownMenu);
     mainContainer.appendChild(bodyContainer);   //main page template 
     mainContainer.appendChild(footerContainer); //main page template 
-    
+
     headerContainer.appendChild(nameOfRestaurant);
-    sidebarContainer.appendChild(homeButton);
-    sidebarContainer.appendChild(menuButton);
-    sidebarContainer.appendChild(galleryButton);
+    
+    dropDownMenu.appendChild(homeButton);
+    dropDownMenu.appendChild(foodAndDrinks);
+    dropDownMenu.appendChild(galleryButton);
     //sidebarContainer.appendChild(contactButton);
    
 
    
     nameOfRestaurant.textContent = "Snacks on the Plate"
-
+    
+    menu.textContent = 'Menu'
     homeButton.textContent = 'Home';
-    menuButton.textContent = 'Menu';
+    foodAndDrinks.textContent = 'Food & Drinks';
     galleryButton.textContent = 'Gallery';
     //contactButton.textContent = 'Contact';
 
     footerContainer.textContent = "Images from https://unsplash.com/"
+
+    menu.addEventListener("click", (e) => {
+        dropDownMenu.classList.toggle('active');
+    });
+
+
+
+
 
 }
