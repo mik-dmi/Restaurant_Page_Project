@@ -44,29 +44,36 @@ html,body{
     display:flex;
     flex-direction: column;
     background-color: rgb(168, 156, 118);
-    grid-row: 1 /span2;;
-    padding-top: 6rem;
+    grid-row: 1 /span2;
+    padding-left: 1rem;
+    padding-top: 1rem;
     
     
 }   
-.menuButton{
+.dropDownButton, .menuButton{
+    text-align: left;
     display: flex;
-    align-items: center;
+    width: 70%;
     justify-content: flex-start;
-    padding: 2rem;
-    padding-left: 20%;
-    margin: 0.5rem;
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: white;
     background-color: transparent;
-    border: none;
     border-radius: 0.5rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
+    border: none;
+    margin-bottom: 2rem;
+    margin-left: 2.5rem;
+    
+}
+.menuButton{
+    font-size:3rem ;
+    margin: 1rem;
+    margin-bottom: 1.2rem;
 }
 
-.menuButton.active {
+.dropDownButton.active {
     /* Change border color to red when clicked */
     background-color: rgb(123, 114, 82); /* Change background color to gray when clicked */
     color: #cce3ea; /* Change text color to white when clicked */
@@ -116,6 +123,7 @@ html,body{
     flex-direction: column;
     padding: 1rem;
     border-radius: 0.5rem;
+    
 
 }
 
@@ -175,4 +183,39 @@ html,body{
     width: 20rem;
     max-height: 20rem;
     border-radius: 1rem;
+}
+
+
+.dropDown{
+    position: relative;
+    background-color: rgb(168, 156, 118);
+    border: none;
+    
+}
+
+.dropDownMenu{
+    position: absolute;
+    left:0;
+    top: calc(100% + 0.1rem);
+    background-color: rgb(168, 156, 118);
+    border: none;
+    opacity: 0;  
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out;   
+    width: fit-content;
+    
+}   
+
+.dropDownMenu.active{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    
+}
+
+.menuButton.active{
+    background-color: rgb(123, 114, 82); /* Change background color to gray when clicked */
+    color: #cce3ea; /* Change text color to white when clicked */
+    width: fit-content;
 }
