@@ -13,7 +13,7 @@ const drinksData = [
     },
     {
         name: 'Chocolate Milkshake',
-        price: "6€",
+        price: "7€",
         description: "A creamy and indulgent dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
         image:'./images/chocolate_milkshake.jpg'
     },
