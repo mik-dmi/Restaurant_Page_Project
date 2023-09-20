@@ -16,10 +16,12 @@ export const galleryPage = ()=>{
 
     pathForImages.forEach((image, index) =>{
         arrDivForImage[index] = document.createElement('div');
-        arrDivForImage[index].classList = 'galleryGridCell';
-
+        arrDivForImage[index].classList.add('galleryGridCell', 'blurImage');
+        
         arrImage[index] = document.createElement('img');
         arrImage[index].classList = 'galleryGridCell';
+
+        arrImage[index].loading = 'lazy';
         arrImage[index].src = image; 
         
         arrDivForImage[index].appendChild(arrImage[index]);

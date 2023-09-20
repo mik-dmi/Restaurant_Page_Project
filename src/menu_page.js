@@ -86,6 +86,7 @@ function foodsContainers(data){
     const imageInBody = document.createElement('img');
     imageInBody.src = this.image;
     imageInBody.classList = 'imageInTheMenu';
+    imageInBody.loading = 'lazy';
     imageContainer.appendChild(imageInBody);
 }
 

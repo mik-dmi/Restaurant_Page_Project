@@ -4,13 +4,13 @@ export const mainPage = ()=>{
     const titleIfBody = [];
     const textInBody = [];
     const dataOfTitleInTheBody = ["Welcome","Oppen Hours","Location"]
-    const dataTextInTheBody = ['Discover culinary excellence at Snacks on the Plate.Our restaurant offers a delightful array of globally inspired snacks and dishes. Experience the perfect blend of comfort and flavor with us today.',
+    const dataTextInTheBody = ['Discover culinary excellence at CaliBrunch.Our restaurant offers a delightful array of globally inspired snacks and dishes. Experience the perfect blend of comfort and flavor with us today.',
     `<strong>Monday to Friday</strong> : 11:00 AM - 10:00 PM<br>
     <strong>Saturday</strong>: 12:00 PM - 11:00 PM<br>
     <strong>Sunday</strong>: 12:00 PM - 9:00 PM
-    `, `Snacks on the Plate is conveniently located at:<br>
+    `, `CaliBrunch is conveniently located at:<br>
     <strong>123 Main Street,</strong><br>
-    <strong>City, State, ZIP Code</strong><br><br>
+    <strong>City, State, ZIP Code</strong><br>
     We are situated in the heart of [City], making it easy for you to find us and enjoy our delicious cuisine. We look forward to welcoming you to our restaurant!
     ` ];
 

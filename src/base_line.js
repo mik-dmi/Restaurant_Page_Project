@@ -8,6 +8,7 @@ export const baseLinePage = ( ) => {
     const bodyContainer = document.createElement('div');
     bodyContainer.classList = 'body';
 
+
     const footerContainer = document.createElement('div');
     footerContainer.classList = 'footer';
     
@@ -27,15 +28,15 @@ export const baseLinePage = ( ) => {
     menu.id = "menu";
 
     const homeButton = document.createElement('button');
-    homeButton.classList = "dropDownButton";
+    homeButton.classList.add( "dropDownButton");
     homeButton.id = "homeButton";
     
     const foodAndDrinks =  document.createElement('button');
-    foodAndDrinks.classList = "dropDownButton";
+    foodAndDrinks.classList.add( "dropDownButton");
     foodAndDrinks.id = "foodAndDrinks";
     
     const galleryButton =  document.createElement('button');
-    galleryButton.classList = "dropDownButton";
+    galleryButton.classList.add( "dropDownButton");
     galleryButton.id = "galleryButton";
     
     //const contactButton =  document.createElement('button');
@@ -62,7 +63,8 @@ export const baseLinePage = ( ) => {
    
 
    
-    nameOfRestaurant.textContent = "Snacks on the Plate"
+    nameOfRestaurant.textContent = "CaliBrunch"
+    nameOfRestaurant.classList.add("headerText")
     
     menu.textContent = 'Menu'
     homeButton.textContent = 'Home';
