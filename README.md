@@ -1,4 +1,4 @@
-# Restaurant Website Project
+# Restaurant Website Project (link for live Demo: https://mik-dmi.github.io/Restaurant_Page_Project/ )
 
 Welcome to the Restaurant Website project! This project showcases a fictitious restaurant webpage developed using JavaScript, CSS, and HTML, with an emphasis on modern web development techniques. This README file provides an overview of the project, its features, and the technologies used.
 
