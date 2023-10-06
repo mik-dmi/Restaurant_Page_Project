@@ -45,18 +45,19 @@ const foodData = [
     },
 ];
 
-function foodsContainers(data){
+function foodsContainers(data ){
     this.name = data.name;
     this.price = data.price;
     this.description = data.description;
     this.image = data.image;
     
-    const bodyContainer = document.querySelector('.body');
+    
   
+    const containerFoodsDrinks = document.querySelector('.containerFoodsDrinks');
 
     const menuContainers = document.createElement('div');
     menuContainers.classList = "containersMenuPage";      
-    bodyContainer.appendChild(menuContainers);
+    containerFoodsDrinks.appendChild(menuContainers);
 
     const titleIfBody = document.createElement('p');
     titleIfBody.classList = 'titleInBody';
@@ -98,13 +99,17 @@ export const menuPage = ()=>{
     while (bodyContainer.firstChild) {
         bodyContainer.removeChild(bodyContainer.firstChild);
     }
+    const containerFoodsDrinks = document.createElement('div');
+    containerFoodsDrinks.classList.add("containerFoodsDrinks")
+    bodyContainer.appendChild(containerFoodsDrinks)
+
     const arrDrink = [];
     const arrFood = [];
 
     const drinksTitleContainer = document.createElement('div');
     drinksTitleContainer.classList = "titleMenu"  
     drinksTitleContainer.textContent = "Beverages"
-    bodyContainer.appendChild(drinksTitleContainer);
+    containerFoodsDrinks.appendChild(drinksTitleContainer);
 
 
     drinksData.forEach((drink, index) => {
@@ -114,7 +119,7 @@ export const menuPage = ()=>{
       const foodTitleContainer = document.createElement('div');
       foodTitleContainer.classList = "titleMenu"  
       foodTitleContainer.textContent = "Food"
-      bodyContainer.appendChild(foodTitleContainer);
+      containerFoodsDrinks.appendChild(foodTitleContainer);
 
       foodData.forEach((food, index) => {
         arrFood[index] = new foodsContainers(food);

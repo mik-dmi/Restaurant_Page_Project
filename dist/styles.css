@@ -2,22 +2,36 @@
     font-family: 'headersFont';
     src: url('./fonts/DelagioScript.otf');  
 }
+:root {
+
+    --width-side-bar: 20rem;
+  }
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+*{
+    margin:0;
+    padding:0;
+}
+
 html,body{
     margin: 0;
-    
-    background-size: cover;
+    /*background-size: cover;*/
     height: 100%;
     width: 100%; 
-
-
 }
-#content{
+body {
+    margin: 0;
+    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns:  auto 1fr;
     grid-template-rows: 1fr 4fr auto;
-    height: 100%;
-    position: relative;
+    height: 100vh;
+    /*position: relative;*/
+    overflow: hidden;
 }
+
 .header{
     display: flex;
     flex-direction: column; /* Set the main axis to be vertical */
@@ -30,7 +44,7 @@ html,body{
     -webkit-text-stroke: 1px #ffffff; /* Outline width and color for webkit browsers */
     background-color: rgb(70, 163, 172);
     background-image: url('./images/beach_normal.jpg'); 
-    height: 20rem; 
+    height: 10rem; 
     background-size: cover;
     background-blend-mode: multiply;
     background-size: 100% 100%;
@@ -41,49 +55,136 @@ html,body{
     width: fit-content;
 }
 .sidebar{
-    display:flex;
-    flex-direction: column;
-    background-color: rgb(168, 156, 118);
-    grid-row: 1 /span2;
-    padding-top: 1rem;  
+    height:100%;
+    width: 5.5rem;
+    padding: 0.4rem 1rem;
     background-image: linear-gradient( rgb(35, 36, 36) , rgb(84, 86, 84)70% );
-}   
-.dropDownButton, .menuButton{
-    text-align: left;
-    display: flex;
-    width: 70%;
-    justify-content: flex-start;
-    font-size: 2.2rem;
-    font-weight: 700;
+    transition: width 0.1s ease-in-out ;
+    grid-row: 1 /span2;
+} 
+
+.sidebar.active{
+    width:var(--width-side-bar);
+}
+
+.sidebar #menuBurgerIcon {
     color: white;
-    background-color: transparent;
-    border-radius: 0.5rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    cursor: pointer;
-    border: none;
-    margin-bottom: 2rem;
-    margin-left: 2.5rem; 
-}
-.menuButton{
-    font-size:3rem ;
-    margin: 1rem;
-    margin-bottom: 1.2rem;
+    top: .5rem;
+    left:50%;
+    font-size: 2.5rem;
+    line-height: 5.4rem;
+    transform: translate(-50%);
+    cursor:pointer;
     display: flex;
-    justify-content: center;
+    align-self: baseline;
+    position: absolute; /* Position the logo absolutely */
+    left: 2.7rem;
+    
 }
-.dropDownButton.active {
-    /* Change border color to red when clicked */
-     /* Change background color to gray when clicked */
-    color: rgb(177, 173, 192); /* Change text color to white when clicked */
+.sidebar.active #menuBurgerIcon {
+position: relative; /* Return the logo to its normal position */
+top: auto;
+left: auto;
+transition: position 4s ease-in-out ;
+
+}
+
+.sidebar .top_side_bar .logo{
+    color: white;
+    display: flex;
+    height: 5rem;
+    width:0.5rem;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    
+}
+.sidebar.active .top_side_bar .logo{
+    opacity: 1;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    
+{/**/}
+    
+}
+.top_side_bar{
+    display: flex;
+    gap: 0.9rem;
+    height: 5rem;
+
+}
+
+.top_side_bar .logo{
+    font-size: 2.6rem;
+    margin-right: 0.8rem;
+}
+
+.sidebar ul li{
+    list-style: none;
+    height: 3rem;
+    width: 90%;
+    margin: 0.5rem 0.8rem 0.5rem 0.8rem;
+    
+}
+
+.sidebar ul li a{
+    
+    color: white;
+    text-decoration: none;
+    border-radius: 0.1rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i:hover{
+    background-color: #ffffff;
+    color: #1f2c43
+}
+.sidebar.active ul li a:hover{
+    background-color: #ffffff;
+    color: #1f2c43
+}
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+}
+
+.sidebar ul li a i{
+    min-width: fit-content;
+    text-align: center;
+    height: 2rem;
+    border-radius: 1rem;
+    
+}
+.sidebar .nav_item{
+    height: fit-content;
+    width: fit-content;
+    opacity:0;
+    margin-left: 1rem;
+}
+.sidebar.active .nav_item{
+    opacity:1;
+    position: relative;
+    transition: opacity 0.5s ease-in 0.2s;
+
+   
+}
+.mainSection{
+    flex-grow: 1;
+    height: 100vh;
+
 }
 .footer{
-    grid-column: 1/span 2;
     background-color: rgb(218, 210, 210);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    grid-column: 1/span 2;
 }
 .body{
     display: flex;
@@ -91,38 +192,65 @@ html,body{
     align-items: center;
     justify-content: center;
     gap:3rem;
-    padding: 2rem;
+    /*padding: 2rem;*/
     background-repeat: no-repeat;
     background-size: cover;
-    background-size: 100% 100%;
-    background-image: linear-gradient(to right bottom, rgb(70, 124, 85) , rgb(180, 228, 234)85% ); /* Path to your background image */
+    /*background-size: 100% 100%;*/
+    background-image: linear-gradient(to right bottom,  rgba(39, 122, 122, 0.84) , rgb(180, 228, 234)95% ); /* Path to your background image */
+   height: 100%;
    
+}
+.containerFoodsDrinks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:3rem; 
+    padding: 2rem;  
 }
 .textInBody, .priceInBody{
     margin: 0rem;
     color:#2f1a05;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
-
+    text-align: justify;
 }
-.titleInBody{
-    font-weight: 800;
-    font-size: 2rem;
-    margin: 0rem;
+.titleInCarousel{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1rem 2rem 2rem;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #ffffff;
+}
+.textInCarousel1{
+    color: #ffffff;
+    text-align-last: justify;
+    padding: 2rem 14rem 4rem 14rem;
+    font-size: 2.5rem;
+    width: 80%;
+    gap:1rem;
     text-align: center;
-    padding-bottom:1em;
-    color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: fit-content;
 }
-.containersHomePage, .containersMenuPage{
-    background-color: rgb(65, 177, 177);
-    font-size: 1.5rem;
-    width:40rem ;
+.textInCarousel2{
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    border-radius: 1.6rem;
+    font-size: 2rem;
+    padding: 1rem 14rem 1rem 14rem;
+    width: 100%;
 }
+
+.carouselTextAndTitleContainer2,.carouselTextAndTitleContainer1 {
+background-color: #6c5a3f73;
+margin: 2rem 12rem 3rem 12rem;
+border-radius: 1rem;
+padding: 2rem;
+}
+
+
+
 .imageInTheMenu{
     max-width: 20rem;
     max-height: 20rem;
@@ -155,7 +283,7 @@ html,body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 1.5;
     margin-top: 0rem;
-    padding-top: 0rem;
+    padding-top: 0rem;  
 }
 .titleMenu{
     font-size: 5rem;
@@ -173,43 +301,174 @@ html,body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 0.5rem;
+    padding: 2rem;
+   
+
 }
 .galleryGridCell{
     width: 20rem;
     max-height: 20rem;
     border-radius: 1rem;
 }
-.dropDown{
-    position: relative;
-    background-color: transparent;
-    border: none; 
-    width: 100%;
+/*-------------------------------   Carousel   --------------------------------------------------*/
+.flipped-arrow {
+    transform: scaleX(-1);
+    display: inline-block;
+  }
+  
+.containersHomePage, .containersMenuPage{
+    background-color: rgb(65, 177, 177);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1.6rem;  
 }
-.dropDownMenu{
-    position: absolute;
-    left:0;
-    top: calc(100% + 0.1rem);
-    background-color: transparent;
-    border: none;
-    opacity: 0;  
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out;   
-    width: 100%;
-    padding-left: 2rem;
-}   
+.containersHomePage{
+    background-size: 100% 100%;
+    
+    background-repeat: no-repeat;
+    border-radius: 0;
+}
 
 
-
-.dropDownMenu.active{
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+.reservation_button{
+    border-radius: 0.7rem;
+    font-size: 3rem;
+    color:white;
+    padding: 1rem;
+    background-color: #c0955eb6;
+    cursor: pointer;
+    font-weight: 600;
     
 }
-.menuButton.active{
-    background-color: transparent; /* Change background color to gray when clicked */
-    color: #cce3ea; /* Change text color to white when clicked */
-    width: fit-content;
+.reservation_button:hover{
+    background-color: rgba(146, 106, 53, 0.7); 
+    color: #ffffffe1;
+}
+.reservation_button:focus{
+    outline: 0.1rem solid rgb(58, 48, 14);
+}
+.titleInBody{
+    height: fit-content;
+    font-weight: 800;
+    font-size: 2rem;
+    margin: 0rem;
+    text-align: center;
+    padding-bottom:1em;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.containersMenuPage{
+    width:40rem ;
+}
+.carousel{
+    background-color: rgb(65, 177, 177);
+    font-size: 1.5rem;
+    /*width:50rem ;*/
+    width: 100%;    
+    height: calc(100vh - 10rem - 2.2rem );
+    /*padding: 1rem;*/
+    position: relative;
+    /*border-radius: 1.6rem;*/
+    /*overflow: auto;*/
 }
 
+.slide{
+    position: absolute;
+    inset:0;
+    opacity:0;
+    transition: 220ms opacity ease-in-out;
+    transition-delay: 220ms;
+    overflow: auto;
+}
+
+.slide[data-active]{
+    opacity:1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+.carousel_button{
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top:50%;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.88);
+    cursor: pointer;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: 2rem;
+    background-color: rgba(0, 0, 0, 0.301);
+}
+.carousel_button:hover,
+.carousel_button:focus{
+    color: white;
+    background-color:rgba(0, 0, 0, 0.5); ;
+}
+.carousel_button:focus{
+    outline: 1px solid black;
+}
+.carousel_button.prev{
+    left:1rem;
+}
+.carousel_button.next{
+    right:1rem;
+}
+/*---------------------------------------------------------------------------------*/
+.formsContainer{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.454);
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    padding: 2rem;
+}
+
+.forms{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;  
+    background-color: rgba(92, 171, 130, 0.927);
+    width: fit-content;
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600; 
+    width: 30rem;
+}
+
+label{
+    align-self: baseline;
+}
+
+input{
+    border-radius: 0.5rem;
+    min-height: 3rem;
+    font-size: large;
+}
+
+.create_a_book_card{
+    padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    background: #4f9fdc;
+    border-radius: 0.5rem;
+}
+
+
+
+.buttonReservationContainer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
