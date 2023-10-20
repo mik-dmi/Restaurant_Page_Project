@@ -170,8 +170,119 @@ reservation.classList.add('nav_item')
 
     menuLogoIconContainer.onclick = function(){
         sidebarContainer.classList.toggle('active')
+        headerContainer.classList.toggle('header_width_adjustment')
 
     }
+/* ------------------------------------------- Scroll -------------------------------------------------------- */
+
+// Define a variable to track whether the transition is in progress
+
+
+
+// Define a variable to track whether the transition is in progress
+let isTransitioning = false;
+
+
+
+// Add a 'transitionend' event listener to the headerContainer
+headerContainer.addEventListener('transitionend', () => {
+    // When the transition ends, remove the 'smaller_header' class
+    isTransitioning = false;
+});
+
+window.addEventListener("scroll", () => {
+    if (scrollY > 200 && !isTransitioning) {
+        // Add a class to the header container only when at the top
+        headerContainer.classList.add('smaller_header');
+        // Set the transition flag to true to prevent further additions
+        isTransitioning = true;
+    }
+    if (scrollY < 200) {
+        // If you want to remove 'smaller_header' without waiting for the transition, you can do it here.
+        headerContainer.classList.remove('smaller_header');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+window.addEventListener("scroll", () => {
+
+    const animationThreshold = 100;
+    
+    if (scrollY >200 ) {
+      
+        headerContainer.classList.add('smaller_header');
+        
+    }
+    if (scrollY >300 ) {
+        nameOfRestaurant.classList.add('headerText_small_heder');
+    }
+    if (scrollY < 200 ) {
+       
+        headerContainer.classList.remove('smaller_header');
+        nameOfRestaurant.classList.remove('headerText_small_heder');
+
+    }
+});*/
+
+
+
+
+
+
+/*
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const newHeight = Math.max(3, 10 - scrollY/60);   
+    const newFontSize = Math.max(2.3, 7 - scrollY/80 );    
+    
+    headerContainer.style.height = newHeight + "rem";
+    headerContainer.style.fontSize = newFontSize + "rem"
+    
+    const widthStyle = getComputedStyle(headerContainer).width;
+    const baseFontSize = 16; 
+
+    const remValueHeaderWidth = parseFloat(widthStyle) / baseFontSize;   
+    console.log(parseFloat(widthStyle))
+    
+    const textPosition = Math.max(0, 0 + scrollY/15 - 30 );
+    console.log(textPosition)
+    if(textPosition <  ((remValueHeaderWidth/2) - 4) ) nameOfRestaurant.style.right = textPosition + "rem";  
+    */
+    /*
+    if(newHeight === 3.1 ) aux = scrollY;
+    if (newHeight === 3 || textPosition <  (remValue- 2)){
+        const textPosition = Math.max(0, 0 + scrollY/5 - (aux ) );
+        nameOfRestaurant.style.right = textPosition + "rem";
+    }
+
+});
+
+*/
+
+
+
 
     mainPage()
 

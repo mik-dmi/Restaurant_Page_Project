@@ -6,7 +6,7 @@ export const mainPage = ()=>{
     const carouselTextAndTitleContainer = [];
     const titleIfBody = [];
     const textInBody = [];
-    const dataOfTitleInTheBody = ["Welcome to CaliBrunch","Open Hours","Location"]
+    const dataOfTitleInTheBody = ["","Open Hours","Location"]
     const dataTextInTheBody = ['',
     `<strong>Monday to Friday:</strong> 11:00-22:00<br>
     <strong>Saturday:</strong> 12:00-23:00<br>
@@ -18,6 +18,7 @@ export const mainPage = ()=>{
     const backgroundImages = ['./images/images_carousel/zero.jpg','./images/images_carousel/one.jpg','./images/images_carousel/two.jpg',]
 
     const bodyContainer = document.querySelector('.body');
+    bodyContainer.classList.add("body_home_page")
     
     const carouselContainer = document.createElement('section')  
     carouselContainer.ariaLabel = "Information about restaurant"
@@ -35,6 +36,9 @@ export const mainPage = ()=>{
     const spanContainerRight = document.createElement('span')
     spanContainerRight.innerHTML  ='&#10151;'
 
+    const aboutSection = document.createElement('div')
+    aboutSection.classList.add("about_section")
+
     carouselButtonLeft.appendChild(spanContainerLeft)
     carouselButtonRight.appendChild(spanContainerRight)
 
@@ -44,6 +48,9 @@ export const mainPage = ()=>{
         bodyContainer.removeChild(bodyContainer.firstChild);
     };  
     bodyContainer.appendChild(carouselContainer)
+    /*bodyContainer.appendChild(aboutSection)*/
+
+    aboutSection.textContent= "ajsnjkaszxjk wsajkznkjscdx kjascjk acjkxz,k ascxzcjkn "
 
     carouselContainer.appendChild(carouselButtonLeft)
     carouselContainer.appendChild(carouselButtonRight)
@@ -58,39 +65,30 @@ export const mainPage = ()=>{
         titleIfBody[i].classList = 'titleInCarousel';
         textInBody[i] = document.createElement('p');
         textInBody[i].classList = `textInCarousel${[i]}`;
-        homePageContainers[i].classList.add("containersHomePage");
+        homePageContainers[i].classList.add(`containersHomePage${[i]}`);
         homePageContainers[i].classList.add("slide");
         titleIfBody[i].textContent = dataOfTitleInTheBody[i];
         textInBody[i].innerHTML  = dataTextInTheBody[i];
         carouselContainer.appendChild(homePageContainers[i]);
         carouselTextAndTitleContainer[i].appendChild(titleIfBody[i]);
         carouselTextAndTitleContainer[i].appendChild(textInBody[i]);
-        homePageContainers[i].style.backgroundImage = `url(${backgroundImages[i]})`;
-        
+        homePageContainers[i].style.backgroundImage = `url(${backgroundImages[i]})`;   
     };
 
     const buttonReservation = document.createElement('button');
     buttonReservation.classList.add('reservation_button');
-    homePageContainers[0].appendChild(buttonReservation)
+    carouselTextAndTitleContainer[0].appendChild(buttonReservation)
     buttonReservation.textContent = 'Make a Reservation'
-
     homePageContainers[0].setAttribute('data-active', '');
-  
     carouselButtonLeft.addEventListener("click", ()=> {
         CarouselButtonsFunction(homePageContainers, '-1');
     })
     carouselButtonRight.addEventListener("click", ()=> {
         CarouselButtonsFunction(homePageContainers, '1');
     })
-
     buttonReservation.addEventListener("click", ()=>{
         reservationPage()
     });
-    
-
-
-
-
 }
 
 function CarouselButtonsFunction(carouselContainers, offset) {
