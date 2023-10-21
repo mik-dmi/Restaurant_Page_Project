@@ -227,7 +227,7 @@ a.pageButtons.active  i{
     align-items: center;
     width: 100%;
     gap:3rem; 
-    padding: 3rem 2rem 2rem 2rem; 
+    padding: 3rem 3rem 3rem 2rem; 
 
 }
 
@@ -238,7 +238,8 @@ a.pageButtons.active  i{
     font-weight: 700;
     font-size: 5rem;
     color: #ffffff;
-    letter-spacing: 0.1rem
+    letter-spacing: 0.1rem;
+    font-variant-caps: all-petite-caps;
 }
 .textInCarousel1{
     color: #ffffff;
@@ -356,6 +357,7 @@ a.pageButtons.active  i{
     align-items: center;   
     padding: 2rem;
     background-color: #332400;
+    overflow: auto;
 }
 .carouselTextAndTitleContainer2,.carouselTextAndTitleContainer1 {
     width: 50%;
@@ -365,6 +367,7 @@ a.pageButtons.active  i{
     align-items: center;
     padding: 2rem;  
     background-color: #332400;
+    overflow: auto ;
 }
 
 .title_reservation{
@@ -561,6 +564,7 @@ label{
 
 .containersMenuPage{
     width: 22rem;
+   
     border-radius: 1.5rem;
     overflow: hidden;
     border: 0.5rem solid white;
@@ -645,8 +649,8 @@ label{
 }
 .drinks_container, .food_container{
     display: grid;
-    grid-template-columns: repeat(3, 30rem);
-    gap:2rem;
+    grid-template-columns: repeat(3, 25rem);
+    gap:1rem;
     margin-bottom: 3rem;
 }
 @media screen and (max-width: 768px) {
@@ -654,20 +658,28 @@ label{
     .drinks_container, .food_container {
       grid-template-columns: 1fr;
     }
-    .carouselImageContainer0, .carouselTextAndTitleContainer0 ,.slide{
+    .carouselImageContainer0, .carouselTextAndTitleContainer0 ,
+    .carouselImageContainer1, .carouselTextAndTitleContainer1,
+    .carouselImageContainer2, .carouselTextAndTitleContainer2,.slide{
         width: 100%;
     }
     .slide{
         flex-direction: column;
     }
-    .carouselImageContainer0, .carouselTextAndTitleContainer0{
-        overflow: auto;
+
+    .title_reservation ,{
+        font-size: 3rem;
     }
-    .title_reservation{
-        font-size: 1rem;
+
+    .textInCarousel1,.textInCarousel2{
+        font-size: 1.5rem;
     }
     .containersHomePage0, .containersHomePage1, .containersHomePage2{
         font-size: 1rem;
+    }
+    .galleryGridContainer{
+        display:flex;
+        flex-direction: column;
     }
 
 
