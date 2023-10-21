@@ -62,6 +62,7 @@ export const baseLinePage = ( ) => {
     containerHomeIcon.id = 'homeButton'
 
     const homeIcon = document.createElement('i');
+    homeIcon.classList.add('foodIcon')   
     homeIcon.classList.add('bx')
     homeIcon.classList.add('bxs-home-alt-2')  
     containerHomeIcon.appendChild(homeIcon)
@@ -87,6 +88,7 @@ containerFoodIcon.id = 'foodAndDrinks'
 
 
 const foodIcon = document.createElement('i');
+foodIcon.classList.add('iconButton')
 foodIcon.classList.add('bx')
 foodIcon.classList.add('bxs-bowl-hot')  
 containerFoodIcon.appendChild(foodIcon)
@@ -110,6 +112,7 @@ containerGalleryIcon.classList.add('pageButtons')
 containerGalleryIcon.id = 'galleryButton'
 
 const galleryIcon = document.createElement('i');
+galleryIcon.classList.add('iconButton')
 galleryIcon.classList.add('bx')
 galleryIcon.classList.add('bxs-camera')  
 containerGalleryIcon.appendChild(galleryIcon)
@@ -130,8 +133,9 @@ const containerFormsIcon = document.createElement('a');
 partOfListMenuFourth.appendChild(containerFormsIcon);
 containerFormsIcon.href = "#";
 containerFormsIcon.classList.add('pageButtons')
-
+/*
 const reservationIcon = document.createElement('i');
+reservationIcon.classList.add('iconButton')
 reservationIcon.classList.add('bx')
 reservationIcon.classList.add('bxs-calendar-plus')  
 containerFormsIcon.appendChild(reservationIcon)
@@ -141,7 +145,7 @@ const reservation = document.createElement('span');
 reservation.textContent = "Reservations"
 containerFormsIcon.appendChild(reservation)
 reservation.classList.add('nav_item')
-
+*/
   
 /*------------------------------------------------------------------------------------------------------*/
 
@@ -284,7 +288,7 @@ window.addEventListener("scroll", () => {
 
 
 
-    mainPage()
+  
 
     
 

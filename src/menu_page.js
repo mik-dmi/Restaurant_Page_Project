@@ -24,12 +24,24 @@ const foodData = [
         price: "12,80€",
         description: "A refreshing salad with a mix of tropical fruits like pineapple, mango, and kiwi, served with a citrusy dressing. It pairs well with drinks like Mango Lassi and Pina Colada.",
         image:'./images/tropical_fruit_salad.jpg'
+    }, 
+    {
+        name: 'Chicken Sandwich',
+        price: "11,70€",
+        description: "Delight in our Chicken Sandwich: a juicy, seasoned chicken breast, served in a soft bun with fresh toppings, for a mouthwatering bite.",
+        image:'./images/tost.jpg'
     },
     {
         name: 'Coconut Shrimp',
         price: "16,70€",
         description: "A creamy and decadent dessert featuring a strawberry topping on a rich cheesecake base. It makes for a sweet ending to a meal, especially after sipping on a Strawberry Daiquiri.",
         image:'./images/coconut_shrimp.jpg'
+    },
+    {
+        name: 'Double Cheeseburger',
+        price: "14,70€",
+        description: "Experience burger perfection with our Double Cheeseburger: two succulent patties, layers of melted cheese, and pure delight in every bite.",
+        image:'./images/hamburger.jpg'
     },
     {
         name: 'Strawberry Cheesecake',
