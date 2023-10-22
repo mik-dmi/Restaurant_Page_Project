@@ -8,9 +8,13 @@
     --width-sidebar-closed: 5.5rem;
     --height-header: 10rem;
     --gold-borders: rgba(137, 121, 31, 0.826);
+    --gold-borders-lighter: rgba(226, 198, 43, 0.891);
     --sidebar-cor-hover-icon:#44280d ;
-    
+    --forms-background-color:  #332400;
+    --gold-titles: rgba(205, 155, 30, 0.93);
+    --color-title-background:#133865fc;
 
+    rgba(205, 155, 30, 0.826)
   }
 
 *, *::before, *::after{
@@ -27,6 +31,7 @@ html,body{
     height: 100%;
     width: 100%; 
     font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
 }
 body {
     margin: 0;
@@ -228,22 +233,10 @@ a.pageButtons.active  i{
     width: 100%;
     gap:3rem; 
     padding: 3rem 3rem 3rem 2rem; 
-
-}
-
-.titleInCarousel{
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem 1rem 1rem 2rem;
-    font-weight: 700;
-    font-size: 5rem;
-    color: #ffffff;
-    letter-spacing: 0.1rem;
-    font-variant-caps: all-petite-caps;
 }
 .textInCarousel1{
     color: #ffffff;
-    text-align-last:left;
+    text-align-last:justify;
     padding: 2rem 2rem 2rem 2rem;
     font-size: 2.5rem;
     width: 80%;
@@ -256,10 +249,9 @@ a.pageButtons.active  i{
     display: flex;
     flex-direction: column;
     font-size: 2rem;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 2rem 1rem 0rem 1rem;
     width: 100%;
     text-align: center;
-    gap:1rem;
 
 }
 
@@ -288,22 +280,12 @@ a.pageButtons.active  i{
     margin: 0;
     padding: 0.8rem;
 }
-.textInBodyMenu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    color:#563311;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-    margin-top: 0rem;
-    padding-top: 0rem;  
-}
+
 .titleMenu{
     font-size: 5rem;
     font-weight: 600;
-    color:white;
-    background-color:#133865fc;
+    color: var(--gold-borders-lighter);
+    background-color:var(--color-title-background);
     padding: 0.5rem 3rem 0.5rem 3rem;
     border-radius: 0.4rem;
     display: flex;
@@ -355,28 +337,43 @@ a.pageButtons.active  i{
     flex-direction: column;
     justify-content: center;
     align-items: center;   
-    padding: 2rem;
-    background-color: #332400;
+    padding: 2rem 2rem 2rem 2rem;
+    background-color:var(--forms-background-color);
     overflow: auto;
 }
 .carouselTextAndTitleContainer2,.carouselTextAndTitleContainer1 {
     width: 50%;
     height: 100%;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     padding: 2rem;  
-    background-color: #332400;
+    background-color: var(--forms-background-color);
     overflow: auto ;
+    row-gap: 2rem ;
 }
-
-.title_reservation{
-    color:white;
+.carouselTextAndTitleContainer2{
+    row-gap: 0rem ; 
+}
+.title_reservation, .titleInCarousel{
     font-size: 5rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
     font-variant-caps: all-petite-caps;
+    color: Var(--gold-borders-lighter);
+    border-bottom: 0.3rem solid var(--gold-borders-lighter);  
 }
+.titleInCarousel{
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+
+
 .carouselTextAndTitleContainer0{
     display: flex;
     flex-direction: column;
@@ -388,72 +385,109 @@ a.pageButtons.active  i{
 }
 .containerReservationForms{
     display:flex;
-    gap: 3rem;
-
+    column-gap: 7rem;
     color: #ffffff;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .containerReservationForms label{
     font-style: italic;
+    position:absolute;
+    display:flex ;
+    height:fit-content;
+    align-items: center;
+    color: #c1bdbd ;
 }
+.input{
+    display: flex;
+    position: relative;
+    margin: 1rem 0;
+
+}
+
 
 .containerReservationForms input{
-    margin: 0.5rem 0rem 1rem 1rem ;
     border: none;
-    border-radius: 0.5rem;
-    min-height: 3rem;
-    font-size: large;
+    font-weight: 400;
+    min-height: 2rem;
+    font-size: 1.3rem;
     outline: none;
     color: #ffffff;
-    background-color: #181818;
-    padding-left: 1rem;
+    background-color: var(--forms-background-color);
+    padding-left: 1rem 0;
+    border: none;
+    border-bottom:0.2rem solid #c1bdbd ;
+    transition: 0.3s ease;
+    width: 15rem;
+  
 }
-.containerReservationForms input:valid{
-    outline:0.3rem solid var(--gold-borders);
+.containerReservationForms input:valid + label{
+     color:var(--gold-borders-lighter);
 }
-
-.containerReservationForms input:invalid:focus{
-    outline:  gray solid 0.2rem;
+.containerReservationForms input:valid:not(:placeholder-shown){
+    outline:  none;
+    border-color: var(--gold-borders);
+    box-shadow: 0 0.1rem 0 0 var(--gold-borders);  
+}
+.containerReservationForms input:invalid:not(:placeholder-shown){
+    outline:  none;
+    border-color: rgb(118, 22, 22);
+    box-shadow:0 0.1rem 0 0 rgb(118, 22, 22);
+}
+.containerReservationForms input:focus{
+    outline:  none;
+    border-color: var(--gold-borders);
+    box-shadow: 0 0.1rem 0 0 var(--gold-borders);  
+}
+.containerReservationForms input:focus + label , input:not(:placeholder-shown) + label{
+    transform: translateY(-1rem);
+    font-size: 1rem;
 }
 
 .SideReservationForms{
     display: flex;
     flex-direction: column;
+    gap:1rem;
 }
 .reservation_button{
     border-radius: 0.3rem;
-    font-size: 3rem;
+    font-size: 1.5rem;
     color:white;
-    padding: 1rem;
-    background: #142d4ce6;
+    padding: 1rem 3rem 1rem 3rem ;
+    background: #082f61bd;
     cursor: pointer;
     font-weight: 600;  
     width: fit-content;
-    border: 0.1rem solid #0e223a;
+    border: none;
     transition: background-color 0.8s;
     position: relative;
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
     z-index:1;
+    box-shadow: 0.3rem 0.3rem 0.5rem 0px rgba(0, 0, 0, 0.5);
+}
+#bookForm{
+    margin-top: 1rem;
 }
 .reservation_button::before{
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 100%;
     height: 0%;
     background-color: var(--gold-borders);
     color: white;
     z-index:-1  ;
     transition: 0.8s;
-    border-radius: 0 0 50% 50%  ;
+    border-radius: 50% 50% 0 0;
+  
 }
 .reservation_button:hover::before{
     height: 180%;
 }
 .reservation_button:focus{
-    outline: 0.1rem solid #142d4ce6;
+    outline: 0.1rem solid rgb(37, 28, 5);
    
 }
 #readTime{
@@ -546,9 +580,7 @@ a.pageButtons.active  i{
 
 
 
-label{
-    align-self: baseline;
-}
+
 
 .create_a_book_card{
     padding: 0.5rem;
@@ -667,8 +699,9 @@ label{
         flex-direction: column;
     }
 
-    .title_reservation ,{
+    .title_reservation {
         font-size: 3rem;
+        color: Var(--gold-borders);
     }
 
     .textInCarousel1,.textInCarousel2{
