@@ -13,7 +13,7 @@ export const mainPage = ()=>{
     <strong>Sunday:</strong> 10:00-21:00`, `CaliBrunch is conveniently located at:<br><br>
     <strong>123 Main Street,</strong><br>
     <strong>Los Santos, US, 1823-23 </strong><br>
-    We are situated in the heart of Los Santos, making it easy for you to find us and enjoy our delicious cuisine. We look forward to welcoming you to our restaurant!
+    We are situated in the heart of Los Santos, making it easy for you to find us and enjoy our delicious cuisine!
     ` ];
     const backgroundImages = ['./images/images_carousel/zero.jpg','./images/images_carousel/one.jpg','./images/images_carousel/two.jpg',]
 
@@ -57,14 +57,20 @@ export const mainPage = ()=>{
     
     for(let i = 0; i < 3; i++ ){
         homePageContainers[i] = document.createElement('li');
-        
+
         carouselImageContainer[i] = document.createElement('div');
         carouselImageContainer[i].classList.add(`carouselImageContainer${[i]}`)
-        homePageContainers[i].appendChild(carouselImageContainer[i])
-
+        
         carouselTextAndTitleContainer[i] = document.createElement('div');
         carouselTextAndTitleContainer[i].classList.add(`carouselTextAndTitleContainer${[i]}`)
-        homePageContainers[i].appendChild(carouselTextAndTitleContainer[i])
+        //make the the image and text container change in the second position of the carousel
+        if( i === 1){
+            homePageContainers[i].appendChild(carouselTextAndTitleContainer[i])
+            homePageContainers[i].appendChild(carouselImageContainer[i])  
+        }else{
+            homePageContainers[i].appendChild(carouselImageContainer[i])
+            homePageContainers[i].appendChild(carouselTextAndTitleContainer[i])
+        }
 
         homePageContainers[i].id = i
         if ( i >0){
@@ -124,25 +130,31 @@ function ReservationForms(reservationFormsContainer){
     const leftSideReservationForms = document.createElement("div");
     leftSideReservationForms.classList.add("SideReservationForms");
 
-
+    const nameDiv = document.createElement("div");
+    nameDiv.classList.add("input");
     const nameLabel = document.createElement("label");
     nameLabel.setAttribute("for", "name");
     nameLabel.textContent = "Full Name";
     const nameInput = document.createElement("input");
     nameInput.type = "text";
-    nameInput.placeholder = "Full Name"
+    nameInput.placeholder = " "
     nameInput.id = "name";
     nameInput.required = true;
 
+    const phoneDiv = document.createElement("div");
+    phoneDiv.classList.add("input");
     const phoneNumber = document.createElement("label");
     phoneNumber.setAttribute("for", "phoneNumber");
     phoneNumber.textContent = "Phone Number";
     const phoneNumberInput = document.createElement("input");
     phoneNumberInput.type = "tel";
-    phoneNumberInput.placeholder= "+49..."
+    phoneNumberInput.placeholder= " "
     phoneNumberInput.id = "phoneNumber";
     phoneNumberInput.required = true;
+    phoneNumberInput.pattern ="\\+?[0-9]{9,12}";
 
+    const emailDiv = document.createElement("div");
+    emailDiv.classList.add("input");
     const email = document.createElement("label");
     email.setAttribute("for", "email");
     email.textContent = "Email";
@@ -150,37 +162,47 @@ function ReservationForms(reservationFormsContainer){
     emailInput.type = "email";
     emailInput.id = "email";
     emailInput.required = true;
-    emailInput.placeholder = "example@gmail.com"
+    emailInput.placeholder = " "
 
+    const numbPeopleDiv = document.createElement("div");
+    numbPeopleDiv.classList.add("input");
     const numberOfPeopleLabel = document.createElement("label");
     numberOfPeopleLabel.setAttribute("for", "numberOfPeople");
     numberOfPeopleLabel.textContent = "Number of People";
     const numberOfPeopleInput = document.createElement("input");
     numberOfPeopleInput.type = "number";
-    numberOfPeopleInput.placeholder = "Between 2 and 15"
+    numberOfPeopleInput.placeholder = " "
     numberOfPeopleInput.id = "numberOfPeople";
     numberOfPeopleInput.required = true;
 
+    const dateDiv = document.createElement("div");
+    dateDiv.classList.add("input");
     const dateInputLabel = document.createElement("label");
     const dateInput = document.createElement("input");
     dateInputLabel.setAttribute("for", "read_date");
-    dateInputLabel.textContent = "Date";
-    dateInput.type = "date";
+    dateInputLabel.textContent = "Date (DD/MM/20YY)";
+    dateInput.type = "text";
     dateInput.id = "read_date"; // Give it an ID for labeling
+    dateInput.placeholder= " "
     dateInput.required = true;
+    dateInput.pattern = "\\d{2}/\\d{2}/202\\d";
     
+    const timeDiv = document.createElement("div");
+    timeDiv.classList.add("input");
     const timeInputLabel = document.createElement("label");
     const timeInput = document.createElement("input");
     timeInputLabel.setAttribute("for", "read_time");
-    timeInputLabel.textContent = "Time";
-    timeInput.type = "time";
+    timeInputLabel.textContent = "Time (10h to 22h)";
+    timeInput.type = "text";
+    timeInput.placeholder = " "
     timeInput.id = "read_time"; 
     timeInput.required = true;
+    timeInput.pattern = "^([1][0-9]|2[0-2]):00$";
     
     const hourDatalist = document.createElement("datalist");
     hourDatalist.id = "hours";
     
-    for (let hour = 12; hour <= 22; hour++) {
+    for (let hour = 22; hour >= 10; hour--) {
         const option = document.createElement("option");
         option.value = `${hour}:00`;
         hourDatalist.appendChild(option);
@@ -197,24 +219,33 @@ function ReservationForms(reservationFormsContainer){
     addButton.textContent = "Book Now";
 
     reservationFormsContainer.appendChild(titleReservation)
-    leftSideReservationForms.appendChild(nameLabel);
-    leftSideReservationForms.appendChild(nameInput);
-    leftSideReservationForms.appendChild(phoneNumber);
-    leftSideReservationForms.appendChild(phoneNumberInput);
-    leftSideReservationForms.appendChild(email);
-    leftSideReservationForms.appendChild(emailInput);
-    rightSideReservationForms.appendChild(numberOfPeopleLabel);
-    rightSideReservationForms.appendChild(numberOfPeopleInput);
-    rightSideReservationForms.appendChild(dateInputLabel)
-    rightSideReservationForms.appendChild(dateInput);
-    rightSideReservationForms.appendChild(timeInputLabel)
-    rightSideReservationForms.appendChild(timeInput);
-    rightSideReservationForms.appendChild(hourDatalist)
+
+    leftSideReservationForms.appendChild(nameDiv);
+    leftSideReservationForms.appendChild(phoneDiv);
+    leftSideReservationForms.appendChild(emailDiv);
+    rightSideReservationForms.appendChild(numbPeopleDiv);
+    rightSideReservationForms.appendChild(dateDiv);
+    rightSideReservationForms.appendChild(timeDiv);
+
+    nameDiv.appendChild(nameInput);
+    nameDiv.appendChild(nameLabel);
+    phoneDiv.appendChild(phoneNumberInput);
+    phoneDiv.appendChild(phoneNumber);
+    emailDiv.appendChild(emailInput);
+    emailDiv.appendChild(email);
+    numbPeopleDiv.appendChild(numberOfPeopleInput);
+    numbPeopleDiv.appendChild(numberOfPeopleLabel);
+    dateDiv.appendChild(dateInput);
+    dateDiv.appendChild(dateInputLabel);
+    timeDiv.appendChild(timeInput);
+    timeDiv.appendChild(timeInputLabel)
+    
+    timeDiv.appendChild(hourDatalist)
         
   
     containerReservationForms.appendChild(leftSideReservationForms)
     containerReservationForms.appendChild(rightSideReservationForms)
-    reservationFormsContainer.appendChild(containerReservationForms)
+    bookForm.appendChild(containerReservationForms)
     reservationFormsContainer.appendChild(bookForm)
     bookForm.appendChild(addButton);
 
