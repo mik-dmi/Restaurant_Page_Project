@@ -64,9 +64,6 @@ function foodsContainers(data, container){
     this.image = data.image;
     
     
-  
-    const containerFoodsDrinks = document.querySelector('.containerFoodsDrinks');
-
     const menuContainers = document.createElement('div');
     
     menuContainers.classList = "containersMenuPage";
@@ -137,7 +134,7 @@ export const menuPage = ()=>{
     const arrFood = [];
 
     const drinksTitleContainer = document.createElement('div');
-    drinksTitleContainer.classList = "titleMenu"  
+    drinksTitleContainer.classList = "HeaderOfPages"  
     drinksTitleContainer.textContent = "Beverages"
     containerFoodsDrinks.appendChild(drinksTitleContainer);
 
@@ -151,7 +148,7 @@ export const menuPage = ()=>{
       });
 
       const foodTitleContainer = document.createElement('div');
-      foodTitleContainer.classList = "titleMenu"  
+      foodTitleContainer.classList = "HeaderOfPages"  
       foodTitleContainer.textContent = "Food"
       containerFoodsDrinks.appendChild(foodTitleContainer);
 

@@ -50,8 +50,6 @@ export const mainPage = ()=>{
     bodyContainer.appendChild(carouselContainer)
     /*bodyContainer.appendChild(aboutSection)*/
 
-    aboutSection.textContent= "ajsnjkaszxjk wsajkznkjscdx kjascjk acjkxz,k ascxzcjkn "
-
     carouselContainer.appendChild(carouselButtonLeft)
     carouselContainer.appendChild(carouselButtonRight)
     

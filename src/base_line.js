@@ -133,19 +133,19 @@ const containerFormsIcon = document.createElement('a');
 partOfListMenuFourth.appendChild(containerFormsIcon);
 containerFormsIcon.href = "#";
 containerFormsIcon.classList.add('pageButtons')
-/*
-const reservationIcon = document.createElement('i');
-reservationIcon.classList.add('iconButton')
-reservationIcon.classList.add('bx')
-reservationIcon.classList.add('bxs-calendar-plus')  
-containerFormsIcon.appendChild(reservationIcon)
-containerFormsIcon.id = 'reservationButton'
 
-const reservation = document.createElement('span');
-reservation.textContent = "Reservations"
-containerFormsIcon.appendChild(reservation)
-reservation.classList.add('nav_item')
-*/
+const aboutUsIcon = document.createElement('i');
+aboutUsIcon.classList.add('iconButton')
+aboutUsIcon.classList.add('bx')
+aboutUsIcon.classList.add('bxs-info-circle')  
+containerFormsIcon.appendChild(aboutUsIcon)
+containerFormsIcon.id = 'aboutUsButton'
+
+const aboutUs = document.createElement('span');
+aboutUs.textContent = "About"
+containerFormsIcon.appendChild(aboutUs)
+aboutUs.classList.add('nav_item')
+
   
 /*------------------------------------------------------------------------------------------------------*/
 

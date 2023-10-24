@@ -2,7 +2,7 @@ import {mainPage} from './home_page.js'
 import {baseLinePage} from './base_line.js'
 import {menuPage} from './menu_page.js'
 import {galleryPage} from './gallery_page.js'
-
+import {aboutUsPage} from './about_us_page.js'
 
 /*----------------------------------- Set up when the page is loaded --------------------------------- */
 baseLinePage();
@@ -19,7 +19,7 @@ menuButtons.forEach(button => {
       if(button.id == 'homeButton') mainPage();
       if(button.id == 'foodAndDrinks') menuPage();
       if(button.id == 'galleryButton') galleryPage();
-      /*if(button.id == 'reservationButton') reservationPage();*/
+      if(button.id == 'aboutUsButton') aboutUsPage();
 } )
 
     
