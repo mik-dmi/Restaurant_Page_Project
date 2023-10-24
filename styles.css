@@ -222,7 +222,7 @@ a.pageButtons.active  i{
 .body_home_page{
     overflow: hidden;
 }
-.containerFoodsDrinks, .containerAboutUs{
+.containerFoodsDrinks{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -661,12 +661,12 @@ a.pageButtons.active  i{
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    width: 50%;
+    max-width: 50%;
 }
 
 .aboutUsLeftContainer{
     padding-right: 6rem;
-    margin: 0 4rem 1rem 5rem;
+    margin: 1rem;
 } 
 .chefsImagesContainer{
     display: flex;
@@ -684,10 +684,14 @@ a.pageButtons.active  i{
 }
     
 .containerAboutUs{
+    display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 0;
     flex-wrap: wrap;
+    max-width: 100%;
+    padding: 1rem;
 }
 .aboutUsDescription::first-letter{
     margin-left: 2rem;
