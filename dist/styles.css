@@ -24,24 +24,19 @@
     margin:0;
     padding:0;
 }
+html{
+    scroll-behavior: smooth;
+
+}
+
 
 html,body{
-    margin: 0;
     /*background-size: cover;*/
 
     font-size: 16px;
     font-family: 'PT Sans', sans-serif;
 }
-body {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns:  auto 1fr;
-    grid-template-rows: 10rem 4fr auto;
-    /*position: relative;*/
-    overflow:scroll;
-    min-height: 98vh;
-}
+
 
 .header{
     position:sticky;
@@ -95,25 +90,8 @@ body {
 .sidebar.active{
     width:var(--width-side-bar);
 }
-.sidebar #menuBurgerIcon {
-    color: white;
-    top: .5rem;
-    left:50%;
-    font-size: 2.5rem;
-    line-height: 5.4rem;
-    transform: translate(-50%);
-    cursor:pointer;
-    display: flex;
-    align-self: baseline;
-    position: absolute; /* Position the logo absolutely */
-    left: 2.7rem;    
-}
-.sidebar.active #menuBurgerIcon {
-position: relative; /* Return the logo to its normal position */
-top: auto;
-left: auto;
-transition: position 4s ease-in-out ;
-}
+
+
 .sidebar .top_side_bar .logo{
     color: white;
     display: flex;
@@ -437,8 +415,15 @@ a.pageButtons.active  i{
 .reservation_button{
     border-radius: 0.3rem;
     font-size: 1.5rem;
+    padding: 1rem 3rem 1rem 3rem ; 
+    margin-top: 3rem;
+
+
+}
+
+.all_button, .reservation_button{
+    border-radius: 0.3rem;
     color:white;
-    padding: 1rem 3rem 1rem 3rem ;
     background: #082f61bd;
     cursor: pointer;
     font-weight: 600;  
@@ -447,14 +432,14 @@ a.pageButtons.active  i{
     transition: background-color 0.8s;
     position: relative;
     overflow: hidden;
-    margin-top: 3rem;
     z-index:1;
     box-shadow: 0.3rem 0.3rem 0.5rem 0px rgba(0, 0, 0, 0.5);
 }
+
 #bookForm{
     margin-top: 1rem;
 }
-.reservation_button::before{
+.all_button::before{
     content: "";
     position: absolute;
     left: 0;
@@ -467,10 +452,10 @@ a.pageButtons.active  i{
     transition: 0.8s;
     border-radius: 50% 50% 0 0; 
 }
-.reservation_button:hover::before{
+.all_button:hover::before{
     height: 180%;
 }
-.reservation_button:focus{
+.all_button:focus{
     outline: 0.1rem solid rgb(37, 28, 5);
    
 }
@@ -783,6 +768,172 @@ a.pageButtons.active  i{
 
 /*----------------------------------------------------------------------------------------------------*/
 
+
+
+
+  /*----------------------------neeewwww -------------------------*/
+
+  
+  :root{
+    --c-brand:#fac562;
+    --c-dark:#333;
+    --c-body:#666;
+    --n-height:100px;
+
+  }
+
+body{
+    color:var(--c-body);
+    line-height:1.2;
+}
+h1,h2,h3,h4,h5,h6{
+    color: var(--c-dark);
+    line-height: 1.2;
+    margin-bottom:10px;
+    font-weight:400;
+}
+
+
+
+.container_navbar{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+.heading_1{
+    font-size: clamp(32px,6vw,54px);
+
+}
+
+.heading_2{
+    font-size: clamp(28px,4vw,36px);
+    
+}
+
+/*------------------ NAV BAR ----------------------*/
+.navbar{
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: var(--n-height);
+    display: flex;
+    top:0;
+    left: 0;
+}
+.brand{
+    color:white;
+    font-size: 1.8rem;
+}
+
+ul{
+    list-style: none;
+}
+.heroImage{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+
+}
+.nav_buttons{
+    display: flex;
+}
+.nav_buttons li:not(:last-child){
+    margin-right: 2.5rem;
+}
+.nav_buttons li a{
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+
+    
+}
+.nav_buttons li a:hover{
+    color:var(--c-brand)
+}
+.hamburger{
+    display: block;
+    cursor: pointer;
+    display:none;
+  
+}
+
+#menuBurgerIcon{
+    color: white;
+   
+}
+
+
+.navbar .container_navbar {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.scrolled{
+    background-color: white;
+}
+
+.scrolled .brand{
+    color: var(--c-dark)
+}
+.scrolled .nav_buttons{
+    color: var(--c-dark)
+}
+.scrolled .nav_buttons li a:hover{
+    color:var(--c-brand)
+}
+.scrolled .nav_buttons li a{
+    color:var(--c-dark)
+}
+.scrolled #menuBurgerIcon{
+    color: var(--c-dark)
+}
+
+body   {
+    height: 2000px;
+}
+.hero{
+    
+    height: calc(100vh - var(--n-height));
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./images/hero.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.heroSection{
+    max-width: 1280px;
+    margin: var(--n-height) auto 0 auto;
+    height: calc(100vh - var(--n-height));
+    display: flex;
+    align-items: center;
+}
+.callToActionContainer{
+    width: fit-content;
+    
+    margin-left: 2rem;
+}
+.callToActionHeader{
+    color: white;
+    font-size: 8rem;
+    font-weight: 600;
+    letter-spacing:0.1rem;
+
+}
+.callToActionParagraph{
+    max-width: 35rem;
+    color: white;
+    line-height: 1.2;
+    font-size: 1.5rem;
+}
+
+.callActionButton{
+    font-size:2rem;
+    padding: 1rem 3rem 1rem 3rem ;
+    margin-top: 2rem;
+}
+
+
 @media screen and (max-width: 768px) {
     /* Change the grid layout to a single column for smaller screens */
     .drinks_container, .food_container {
@@ -812,4 +963,39 @@ a.pageButtons.active  i{
         display:flex;
         flex-direction: column;
     }
-  }
+
+    .nav_buttons{
+        position: fixed;
+        top: var(--n-height);
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        padding: 0 1.5rem;
+        transition: all 0.4s ease-in-out;
+        height: 0;
+        overflow: hidden;
+        justify-content: center;
+        
+    }
+
+    .nav_buttons.active{
+        height: 11rem ;
+
+    }
+    .nav_buttons li{
+        padding: 0.6rem 0;
+    }   
+    .hamburger{
+        display: block;
+        
+    }
+
+    .nav_buttons li a{
+        color: var(--c-dark);
+
+  };
+
+
+
+
+}

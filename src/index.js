@@ -6,12 +6,12 @@ import {aboutUsPage} from './about_us_page.js'
 
 /*----------------------------------- Set up when the page is loaded --------------------------------- */
 baseLinePage();
-mainPage();
+/*mainPage();*/
 const menuButtons = document.querySelectorAll('.pageButtons');
 const homeButton = document.getElementById('homeButton');
 homeButton.classList.toggle('active');                           
 
-
+/*
 menuButtons.forEach(button => {
   button.addEventListener('click', (e)=>{
     menuButtons.forEach(b => b.classList.remove('active'));
@@ -22,8 +22,8 @@ menuButtons.forEach(button => {
       if(button.id == 'aboutUsButton') aboutUsPage();
 } )
 
-    
-});
+  
+}); */ 
 
 
 

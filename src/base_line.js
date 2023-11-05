@@ -2,54 +2,59 @@ import {mainPage} from './home_page.js'
 export const baseLinePage = ( ) => {
 
     const mainContainer = document.querySelector('body');
+    
+    const navbar = document.createElement('div');
+    navbar.classList = "navbar";
+    mainContainer.appendChild(navbar);
 
-    const headerContainer = document.createElement('div');
-    headerContainer.classList = 'header';
+    const heroContainer= document.createElement('div');
+    heroContainer.classList.add('hero');
+
+    const heroSection= document.createElement('div');
+    heroSection.classList.add('heroSection');
+    heroContainer.appendChild(heroSection);
+
+    const callToActionContainer= document.createElement('div');
+    callToActionContainer.classList.add('callToActionContainer');
+    heroSection.appendChild(callToActionContainer);
+    
+    const callToActionHeader= document.createElement('h2');
+    callToActionHeader.classList.add('callToActionHeader');
+    callToActionContainer.appendChild(callToActionHeader);
+    callToActionHeader.textContent = "CaliBrunch"
+
+    const callToActionParagraph= document.createElement('p');
+    callToActionParagraph.classList.add('callToActionParagraph');
+    callToActionContainer.appendChild(callToActionParagraph);
+    callToActionParagraph.textContent = "Experience exceptional brunch at our beach restaurant. Amazing food, scenery, and vibes await you."
+
+    const buttonHero= document.createElement('button');
+    buttonHero.classList.add('all_button');
+    buttonHero.classList.add('callActionButton');
+    callToActionContainer.appendChild(buttonHero);
+    buttonHero.textContent = "Reservation"
+
+
+    const navbarContainer = document.createElement('div');
+    navbarContainer.classList.add("container_navbar");
+    
 
     const bodyContainer = document.createElement('div');
-    bodyContainer.classList = 'body';
+    bodyContainer.classList.add('body');
     
-    const mainSectionContainer = document.createElement('div');
-    mainSectionContainer.classList = 'mainSection';
-    
+   
     const footerContainer = document.createElement('div');
     footerContainer.classList = 'footer';
     
-    const sidebarContainer = document.createElement('div');
-    sidebarContainer.classList = "sidebar";
-
-    const dropDown = document.createElement('div');
-    dropDown.classList = "dropDown";
-    dropDown.id = "dropDown";
+    const nameOfRestaurant = document.createElement('a');
+    nameOfRestaurant.textContent = "CaliBrunch"
+    navbarContainer.appendChild(nameOfRestaurant);
+    nameOfRestaurant.classList.add("brand");
     
-    const topOfSideBar = document.createElement('div');
-    topOfSideBar.classList.add('top_side_bar')
-    sidebarContainer.appendChild(topOfSideBar)
-    
-    const menuLogo = document.createElement('div');
-    menuLogo.classList.add('logo')
-    topOfSideBar.appendChild(menuLogo)
- 
-
-    const logo = document.createElement('i');
-    logo.classList.add('bx')
-    logo.classList.add('bxl-mongodb')  
-    menuLogo.appendChild(logo)
-    
-    const smallTitle = document.createElement('span');
-    smallTitle.textContent = "CaliBrunch"
-    menuLogo.appendChild(smallTitle)
-
-    const menuLogoIconContainer = document.createElement('div');
-    menuLogoIconContainer.classList.add('bx')
-    menuLogoIconContainer.classList.add('bx-menu')
-    //menuLogoIconContainer.style.opacity = 1  
-    menuLogoIconContainer.id = "menuBurgerIcon"
-    topOfSideBar.appendChild(menuLogoIconContainer)
-
 
     const listMenu = document.createElement('ul');
-    sidebarContainer.appendChild(listMenu);
+    navbarContainer.appendChild(listMenu);
+    listMenu.classList.add("nav_buttons")
 
 /*------------------------------------------------------------------------------------------------------*/
     const partOfListMenu = document.createElement('li');
@@ -60,23 +65,21 @@ export const baseLinePage = ( ) => {
     containerHomeIcon.href = "#";
     containerHomeIcon.classList.add('pageButtons')
     containerHomeIcon.id = 'homeButton'
-
+/*
     const homeIcon = document.createElement('i');
     homeIcon.classList.add('foodIcon')   
     homeIcon.classList.add('bx')
     homeIcon.classList.add('bxs-home-alt-2')  
     containerHomeIcon.appendChild(homeIcon)
-
+*/
         
     const home = document.createElement('span');
     home.textContent = "Home"
     containerHomeIcon.appendChild(home)
     home.classList.add('nav_item')
 
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
 
-   
-/*------------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------------*/
 const partOfListMenuSecond = document.createElement('li');
 listMenu.appendChild(partOfListMenuSecond);
 
@@ -86,22 +89,21 @@ containerFoodIcon.href = "#";
 containerFoodIcon.classList.add('pageButtons')
 containerFoodIcon.id = 'foodAndDrinks'
 
-
+/*
 const foodIcon = document.createElement('i');
 foodIcon.classList.add('iconButton')
 foodIcon.classList.add('bx')
 foodIcon.classList.add('bxs-bowl-hot')  
 containerFoodIcon.appendChild(foodIcon)
-
+*/
     
 const food = document.createElement('span');
 food.textContent = "Menu"
 containerFoodIcon.appendChild(food)
 food.classList.add('nav_item')
 
-  
-/*------------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------------*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
 const partOfListMenuThird = document.createElement('li');
 listMenu.appendChild(partOfListMenuThird);
 
@@ -110,22 +112,21 @@ partOfListMenuThird.appendChild(containerGalleryIcon);
 containerGalleryIcon.href = "#";
 containerGalleryIcon.classList.add('pageButtons')
 containerGalleryIcon.id = 'galleryButton'
-
+/*
 const galleryIcon = document.createElement('i');
 galleryIcon.classList.add('iconButton')
 galleryIcon.classList.add('bx')
 galleryIcon.classList.add('bxs-camera')  
 containerGalleryIcon.appendChild(galleryIcon)
-
+*/
 
 const gallery = document.createElement('span');
 gallery.textContent = "Gallery"
 containerGalleryIcon.appendChild(gallery)
 gallery.classList.add('nav_item')
 
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
   
-/*------------------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------------------*/
 const partOfListMenuFourth = document.createElement('li');
 listMenu.appendChild(partOfListMenuFourth);
 
@@ -133,14 +134,14 @@ const containerFormsIcon = document.createElement('a');
 partOfListMenuFourth.appendChild(containerFormsIcon);
 containerFormsIcon.href = "#";
 containerFormsIcon.classList.add('pageButtons')
-
+/*
 const aboutUsIcon = document.createElement('i');
 aboutUsIcon.classList.add('iconButton')
 aboutUsIcon.classList.add('bx')
 aboutUsIcon.classList.add('bxs-info-circle')  
 containerFormsIcon.appendChild(aboutUsIcon)
 containerFormsIcon.id = 'aboutUsButton'
-
+*/
 const aboutUs = document.createElement('span');
 aboutUs.textContent = "About"
 containerFormsIcon.appendChild(aboutUs)
@@ -149,148 +150,67 @@ aboutUs.classList.add('nav_item')
   
 /*------------------------------------------------------------------------------------------------------*/
 
-     
+    const hamburgerContainer = document.createElement('div');
+    hamburgerContainer.classList.add('hamburger')
+   
+    navbarContainer.appendChild(hamburgerContainer)
+
+    const hamburgerIcon = document.createElement('span');
+    hamburgerIcon.classList.add('logo')
+    hamburgerContainer.appendChild(hamburgerIcon)
+
+    const menuLogoIconContainer = document.createElement('div');
+    menuLogoIconContainer.classList.add('bx')
+    menuLogoIconContainer.classList.add('bx-menu')
+    //menuLogoIconContainer.style.opacity = 1  
+    menuLogoIconContainer.id = "menuBurgerIcon"
+    hamburgerContainer.appendChild(menuLogoIconContainer) 
     
-    const nameOfRestaurant = document.createElement('div');
-    
+
    
      
      
     //mainContainer.appendChild(mainSectionContainer)
-    mainContainer.appendChild(headerContainer); //main page template
-    mainContainer.appendChild(sidebarContainer);
+    navbar.appendChild(navbarContainer);
+    mainContainer.appendChild(heroContainer);
     mainContainer.appendChild(bodyContainer);
     mainContainer.appendChild(footerContainer); //main page template 
-    headerContainer.appendChild(nameOfRestaurant);
     
     
-    nameOfRestaurant.textContent = "CaliBrunch"
-    nameOfRestaurant.classList.add("headerText")
-
-
-    footerContainer.textContent = "Images from https://unsplash.com/";
-
-
-
-    menuLogoIconContainer.onclick = function(){
-        sidebarContainer.classList.toggle('active')
-        headerContainer.classList.toggle('header_width_adjustment')
-
-    }
-/* ------------------------------------------- Scroll -------------------------------------------------------- */
-
-// Define a variable to track whether the transition is in progress
-
-
-
-// Define a variable to track whether the transition is in progress
-let isTransitioning = false;
-
-
-
-// Add a 'transitionend' event listener to the headerContainer
-headerContainer.addEventListener('transitionend', () => {
-    // When the transition ends, remove the 'smaller_header' class
-    isTransitioning = false;
-});
-
-window.addEventListener("scroll", () => {
-    if (scrollY > 200 && !isTransitioning) {
-        // Add a class to the header container only when at the top
-        headerContainer.classList.add('smaller_header');
-        // Set the transition flag to true to prevent further additions
-        isTransitioning = true;
-    }
-    if (scrollY < 200) {
-        // If you want to remove 'smaller_header' without waiting for the transition, you can do it here.
-        headerContainer.classList.remove('smaller_header');
-    }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-window.addEventListener("scroll", () => {
-
-    const animationThreshold = 100;
     
-    if (scrollY >200 ) {
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
       
-        headerContainer.classList.add('smaller_header');
-        
-    }
-    if (scrollY >300 ) {
-        nameOfRestaurant.classList.add('headerText_small_heder');
-    }
-    if (scrollY < 200 ) {
-       
-        headerContainer.classList.remove('smaller_header');
-        nameOfRestaurant.classList.remove('headerText_small_heder');
-
-    }
-});*/
-
-
-
-
-
-
-/*
-window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-    const newHeight = Math.max(3, 10 - scrollY/60);   
-    const newFontSize = Math.max(2.3, 7 - scrollY/80 );    
+        if (scrollY >= 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
     
-    headerContainer.style.height = newHeight + "rem";
-    headerContainer.style.fontSize = newFontSize + "rem"
-    
-    const widthStyle = getComputedStyle(headerContainer).width;
-    const baseFontSize = 16; 
+    hamburgerContainer.addEventListener('click', ()=>{
 
-    const remValueHeaderWidth = parseFloat(widthStyle) / baseFontSize;   
-    console.log(parseFloat(widthStyle))
-    
-    const textPosition = Math.max(0, 0 + scrollY/15 - 30 );
-    console.log(textPosition)
-    if(textPosition <  ((remValueHeaderWidth/2) - 4) ) nameOfRestaurant.style.right = textPosition + "rem";  
-    */
-    /*
-    if(newHeight === 3.1 ) aux = scrollY;
-    if (newHeight === 3 || textPosition <  (remValue- 2)){
-        const textPosition = Math.max(0, 0 + scrollY/5 - (aux ) );
-        nameOfRestaurant.style.right = textPosition + "rem";
-    }
+        listMenu.classList.toggle('active')
 
-});
-
-*/
-
-
-
-
-  
+    } )
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    footerContainer.textContent = "Images from https://unsplash.com/";
 
 
 
