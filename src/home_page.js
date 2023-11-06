@@ -18,10 +18,12 @@ export const mainPage = ()=>{
     const backgroundImages = ['./images/images_carousel/zero.jpg','./images/images_carousel/one.jpg','./images/images_carousel/two.jpg',]
 
     const bodyContainer = document.querySelector('.body');
-    bodyContainer.classList.add("body_home_page")
     
-    const carouselContainer = document.createElement('section')  
-    carouselContainer.ariaLabel = "Information about restaurant"
+    const sectionContainer = document.createElement('section')  
+    sectionContainer.classList.add('carouselSection')
+
+    
+    const carouselContainer = document.createElement('div')  
     carouselContainer.classList.add('carousel')
 
     const carouselButtonLeft = document.createElement('button')
@@ -42,12 +44,13 @@ export const mainPage = ()=>{
     carouselButtonLeft.appendChild(spanContainerLeft)
     carouselButtonRight.appendChild(spanContainerRight)
 
-  
+  /*
     
     while (bodyContainer.firstChild) {
         bodyContainer.removeChild(bodyContainer.firstChild);
-    };  
-    bodyContainer.appendChild(carouselContainer)
+    }; */ 
+    bodyContainer.appendChild(sectionContainer)
+    sectionContainer.appendChild(carouselContainer)
     /*bodyContainer.appendChild(aboutSection)*/
 
     carouselContainer.appendChild(carouselButtonLeft)
@@ -214,6 +217,7 @@ function ReservationForms(reservationFormsContainer){
     const addButton = document.createElement("button");
     addButton.type = "submit";
     addButton.classList.add("reservation_button");
+    addButton.classList.add("all_button");
     addButton.textContent = "Book Now";
 
     reservationFormsContainer.appendChild(titleReservation)

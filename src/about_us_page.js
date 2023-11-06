@@ -1,3 +1,5 @@
+ 
+
 const aboutUsData = [
     { 
         title: "Your Beachside Oasis",
@@ -32,12 +34,11 @@ export const aboutUsPage = () => {
     const description = [];
     
     const bodyContainer = document.querySelector('.body');
-    while (bodyContainer.firstChild) {
-        bodyContainer.removeChild(bodyContainer.firstChild);
-    }
+
 
     const containerAboutUs = document.createElement('div');
     containerAboutUs.classList.add("containerAboutUs");
+    containerAboutUs.id= "about"
     bodyContainer.appendChild(containerAboutUs)
 
     const aboutUsLeftContainer = document.createElement('div');
@@ -49,10 +50,18 @@ export const aboutUsPage = () => {
     containerAboutUs.appendChild(aboutUsRightContainer) 
 
 /*-------------------------------------------- Left Side of the Page ---------------------------------------------------------*/    
-    const headerContainer = document.createElement('div');
-    headerContainer.classList.add("HeaderOfPages");
-    aboutUsLeftContainer.appendChild(headerContainer) 
-    headerContainer.textContent = "About Us"
+    const aboutUsTitleContainer = document.createElement('div');
+    aboutUsTitleContainer.classList = "HeaderOfPages";
+    aboutUsLeftContainer.appendChild(aboutUsTitleContainer);
+
+    const spanMTitleContainer = document.createElement('span');
+    spanMTitleContainer.classList.add("text-gold-gradient" )
+    spanMTitleContainer.textContent = "About Us";
+    aboutUsTitleContainer.appendChild(spanMTitleContainer);   
+
+
+
+
 
     for(let i = 0;  i < 3; i++){
         titles[i] = document.createElement('h1'); 
@@ -81,22 +90,19 @@ export const aboutUsPage = () => {
     instagramIconContainer.classList.add("socialMediaIcons");
     socialMediaIconsContainer.appendChild(instagramIconContainer)*/
     
-    const instagram = document.createElement('i'); 
+    const instagram = document.createElement('img'); 
     instagram.classList.add('socialMediaIcons')
-    instagram.classList.add('bx')
-    instagram.classList.add('bxl-instagram') 
+    instagram.src= "./images/social_media_icon/instagram.png"
     socialMediaIconsContainer.appendChild(instagram)
 
-    const twitter = document.createElement('i');
+    const twitter = document.createElement('img');
     twitter.classList.add('socialMediaIcons')
-    twitter.classList.add('bx')
-    twitter.classList.add('bxl-twitter') 
+    twitter.src= "./images/social_media_icon/twitter.png"
     socialMediaIconsContainer.appendChild(twitter)
 
-    const facebook = document.createElement('i'); 
+    const facebook = document.createElement('img'); 
     facebook.classList.add('socialMediaIcons')
-    facebook.classList.add('bx')
-    facebook.classList.add('bxl-meta') 
+    facebook.src= "./images/social_media_icon/facebook.png"
     socialMediaIconsContainer.appendChild(facebook)
 
 /*------------------------------------------------------------ Right Side of the Page ---------------------------------------------------------*/

@@ -6,10 +6,41 @@ import {aboutUsPage} from './about_us_page.js'
 
 /*----------------------------------- Set up when the page is loaded --------------------------------- */
 baseLinePage();
-/*mainPage();*/
+menuPage();
+mainPage();
+galleryPage();
+aboutUsPage();
 const menuButtons = document.querySelectorAll('.pageButtons');
 const homeButton = document.getElementById('homeButton');
 homeButton.classList.toggle('active');                           
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav_buttons a");
+
+  navLinks.forEach(function (link) {
+      link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href").substring(1);
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+              const yOffset = -64; // You can adjust this value for proper scrolling position
+              const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+              window.scrollTo({
+                  top: y,
+                  behavior: "smooth"
+              });
+          }
+      });
+  });
+});
+
+
+
+
+
 
 /*
 menuButtons.forEach(button => {

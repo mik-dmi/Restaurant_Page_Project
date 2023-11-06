@@ -128,13 +128,23 @@ export const menuPage = ()=>{
     }
     const containerFoodsDrinks = document.createElement('div');
     containerFoodsDrinks.classList.add("containerFoodsDrinks")
+    containerFoodsDrinks.id = "menu"
     bodyContainer.appendChild(containerFoodsDrinks)
 
     const arrDrink = [];
     const arrFood = [];
 
+    const menuTitleContainer = document.createElement('div');
+    menuTitleContainer.classList = "HeaderOfPages";
+    containerFoodsDrinks.appendChild(menuTitleContainer);
+
+    const spanMenuTitleContainer = document.createElement('span');
+    spanMenuTitleContainer.classList.add("text-gold-gradient" )
+    spanMenuTitleContainer.textContent = "Menu";
+    menuTitleContainer.appendChild(spanMenuTitleContainer);
+
     const drinksTitleContainer = document.createElement('div');
-    drinksTitleContainer.classList = "HeaderOfPages"  
+    drinksTitleContainer.classList = "SubHeaderOfPages"  
     drinksTitleContainer.textContent = "Beverages"
     containerFoodsDrinks.appendChild(drinksTitleContainer);
 
@@ -148,7 +158,7 @@ export const menuPage = ()=>{
       });
 
       const foodTitleContainer = document.createElement('div');
-      foodTitleContainer.classList = "HeaderOfPages"  
+      foodTitleContainer.classList = "SubHeaderOfPages"  
       foodTitleContainer.textContent = "Food"
       containerFoodsDrinks.appendChild(foodTitleContainer);
 

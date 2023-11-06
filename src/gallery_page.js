@@ -2,15 +2,34 @@ const pathForImages = ['./images/galleryImages/image_1.jpg','./images/galleryIma
 
 export const galleryPage = ()=>{
     const bodyContainer = document.querySelector('.body');
-    while (bodyContainer.firstChild) {
+    /*while (bodyContainer.firstChild) {
         bodyContainer.removeChild(bodyContainer.firstChild);
-    };
+    };*/
     
     const arrDivForImage = [];
     const arrImage = [];
+
+    const sectionContainer = document.createElement('div');
+    sectionContainer.classList = 'gallerySectionContainer';
+    sectionContainer.id = "gallery"
+    bodyContainer.appendChild(sectionContainer);
+
+
+
+    const galleryTitleContainer = document.createElement('div');
+    galleryTitleContainer.classList = "HeaderOfPages";
+    sectionContainer.appendChild(galleryTitleContainer);
+
+    const spanMTitleContainer = document.createElement('span');
+    spanMTitleContainer.classList.add("text-gold-gradient" )
+    spanMTitleContainer.textContent = "Gallery";
+    galleryTitleContainer.appendChild(spanMTitleContainer);
+
     const gridContainer = document.createElement('div');
     gridContainer.classList = 'galleryGridContainer';
-    bodyContainer.appendChild(gridContainer);
+    sectionContainer.appendChild(gridContainer);
+
+    
     
 
     pathForImages.forEach((image, index) =>{

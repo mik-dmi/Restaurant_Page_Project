@@ -12,6 +12,7 @@ export const baseLinePage = ( ) => {
 
     const heroSection= document.createElement('div');
     heroSection.classList.add('heroSection');
+    heroSection.id ="home"
     heroContainer.appendChild(heroSection);
 
     const callToActionContainer= document.createElement('div');
@@ -20,13 +21,14 @@ export const baseLinePage = ( ) => {
     
     const callToActionHeader= document.createElement('h2');
     callToActionHeader.classList.add('callToActionHeader');
+    callToActionHeader.classList.add('text-gold-gradient')
     callToActionContainer.appendChild(callToActionHeader);
     callToActionHeader.textContent = "CaliBrunch"
 
     const callToActionParagraph= document.createElement('p');
     callToActionParagraph.classList.add('callToActionParagraph');
     callToActionContainer.appendChild(callToActionParagraph);
-    callToActionParagraph.textContent = "Experience exceptional brunch at our beach restaurant. Amazing food, scenery, and vibes await you."
+    callToActionParagraph.textContent = "Experience an exceptional brunch at our beach restaurant. Amazing food, scenery, and vibes await you."
 
     const buttonHero= document.createElement('button');
     buttonHero.classList.add('all_button');
@@ -43,9 +45,13 @@ export const baseLinePage = ( ) => {
     bodyContainer.classList.add('body');
     
    
+    const footerSection = document.createElement('div');
+    footerSection.classList.add('footer');
+
     const footerContainer = document.createElement('div');
-    footerContainer.classList = 'footer';
-    
+    footerContainer.classList.add('footerContainer');
+    footerSection.appendChild(footerContainer);
+
     const nameOfRestaurant = document.createElement('a');
     nameOfRestaurant.textContent = "CaliBrunch"
     navbarContainer.appendChild(nameOfRestaurant);
@@ -62,7 +68,7 @@ export const baseLinePage = ( ) => {
 
     const containerHomeIcon = document.createElement('a');
     partOfListMenu.appendChild(containerHomeIcon);
-    containerHomeIcon.href = "#";
+    containerHomeIcon.href = "#home";
     containerHomeIcon.classList.add('pageButtons')
     containerHomeIcon.id = 'homeButton'
 /*
@@ -85,7 +91,7 @@ listMenu.appendChild(partOfListMenuSecond);
 
 const containerFoodIcon = document.createElement('a');
 partOfListMenuSecond.appendChild(containerFoodIcon);
-containerFoodIcon.href = "#";
+containerFoodIcon.href = "#menu";
 containerFoodIcon.classList.add('pageButtons')
 containerFoodIcon.id = 'foodAndDrinks'
 
@@ -109,7 +115,7 @@ listMenu.appendChild(partOfListMenuThird);
 
 const containerGalleryIcon = document.createElement('a');
 partOfListMenuThird.appendChild(containerGalleryIcon);
-containerGalleryIcon.href = "#";
+containerGalleryIcon.href = "#gallery";
 containerGalleryIcon.classList.add('pageButtons')
 containerGalleryIcon.id = 'galleryButton'
 /*
@@ -132,7 +138,7 @@ listMenu.appendChild(partOfListMenuFourth);
 
 const containerFormsIcon = document.createElement('a');
 partOfListMenuFourth.appendChild(containerFormsIcon);
-containerFormsIcon.href = "#";
+containerFormsIcon.href = "#about";
 containerFormsIcon.classList.add('pageButtons')
 /*
 const aboutUsIcon = document.createElement('i');
@@ -174,23 +180,47 @@ aboutUs.classList.add('nav_item')
     navbar.appendChild(navbarContainer);
     mainContainer.appendChild(heroContainer);
     mainContainer.appendChild(bodyContainer);
-    mainContainer.appendChild(footerContainer); //main page template 
+    mainContainer.appendChild(footerSection); //main page template 
     
     
-    
+  
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
       
         if (scrollY >= 100) {
             navbar.classList.add('scrolled');
+            navbar.style.background = 'white';
+            nameOfRestaurant.style.color = '#333';
+            menuLogoIconContainer.style.color= '#333';
+           
         } else {
             navbar.classList.remove('scrolled');
+            if(!(listMenu.classList.contains('active')) ){
+                navbar.style.background = 'none';
+                nameOfRestaurant.style.color = 'white';
+                menuLogoIconContainer.style.color= 'white';
+             
+
+            }
         }
     });
     
     hamburgerContainer.addEventListener('click', ()=>{
 
         listMenu.classList.toggle('active')
+       if(listMenu.classList.contains('active')) {
+            navbar.style.background = 'white';
+            nameOfRestaurant.style.color = '#333';
+            menuLogoIconContainer.style.color= '#333';
+        }
+        if(!(listMenu.classList.contains('active')) && !(navbar.classList.contains('scrolled'))){
+            navbar.style.background = 'none';
+            nameOfRestaurant.style.color = 'white';
+            menuLogoIconContainer.style.color= 'white';
+            }
+     
+        
+
 
     } )
 
@@ -210,7 +240,31 @@ aboutUs.classList.add('nav_item')
     
     
     
-    footerContainer.textContent = "Images from https://unsplash.com/";
+    const spanFooter = document.createElement('span');
+    spanFooter.textContent = "CopyRight Ⓒ 2023. All rights are reserved";
+    footerContainer.appendChild(spanFooter); 
+
+    const socialMediaIconsContainer = document.createElement('div'); 
+    socialMediaIconsContainer.classList.add("socialMediaIconsContainer");
+    footerContainer.appendChild(socialMediaIconsContainer)
+    
+    const instagram = document.createElement('i'); 
+    instagram.classList.add('socialMediaIcons')
+    instagram.classList.add('bx')
+    instagram.classList.add('bxl-instagram') 
+    socialMediaIconsContainer.appendChild(instagram)
+
+    const twitter = document.createElement('i');
+    twitter.classList.add('socialMediaIcons')
+    twitter.classList.add('bx')
+    twitter.classList.add('bxl-twitter') 
+    socialMediaIconsContainer.appendChild(twitter)
+
+    const facebook = document.createElement('i'); 
+    facebook.classList.add('socialMediaIcons')
+    facebook.classList.add('bx')
+    facebook.classList.add('bxl-meta') 
+    socialMediaIconsContainer.appendChild(facebook)
 
 
 
