@@ -13,7 +13,7 @@
     --forms-background-color:  #332400;
     --gold-titles: rgba(205, 155, 30, 0.93);
     --color-title-background:#133865fc;
-
+    --color-subtitle-background:#125cb7ee;
     /*rgba(205, 155, 30, 0.826)*/
   }
 
@@ -24,15 +24,12 @@
     margin:0;
     padding:0;
 }
-html{
-    scroll-behavior: smooth;
 
-}
 
 
 html,body{
     /*background-size: cover;*/
-
+    scroll-behavior: smooth;
     font-size: 16px;
     font-family: 'PT Sans', sans-serif;
 }
@@ -174,40 +171,17 @@ a.pageButtons.active  i{
     flex-grow: 1;
     height: 100vh;
 }
-.footer{
-    background-color: rgb(218, 210, 210);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    grid-column: 1/span 2;
-}
 
-.body, .body_home_page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-    gap:3rem;
-    /*padding: 2rem;*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-size: 100% 100%;*/
-    /*background-image: linear-gradient(to right bottom,  rgba(39, 122, 122, 0.84) , rgb(180, 228, 234)95% );*/ /* Path to your background image */
-   height: 100%;  
-}
-.body_home_page{
-    overflow: hidden;
-}
+
+
 .containerFoodsDrinks{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap:3rem; 
-    padding: 3rem 3rem 3rem 2rem; 
+     
+    padding: 6rem 3rem 4rem 2rem; 
 }
 .textInCarousel1{
     color: #ffffff;
@@ -269,14 +243,40 @@ a.pageButtons.active  i{
     width: 28rem;
     align-self: center;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
+    
 }
+.SubHeaderOfPages{
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--c-dark);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    align-self: center;
+    border-bottom: 0.5rem solid var(--gold-borders-lighter);
+    margin-bottom: 2rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 .galleryGridContainer{
     display:grid ;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 3rem;
-    padding: 2rem;
+    padding: 0rem 2rem;
 }
 .galleryGridCell{
     width: 20rem;
@@ -353,7 +353,7 @@ a.pageButtons.active  i{
 }
 .containerReservationForms{
     display:flex;
-    column-gap: 7rem;
+    column-gap: 4rem;
     color: #ffffff;
     justify-content: center;
     flex-wrap: wrap;
@@ -421,7 +421,7 @@ a.pageButtons.active  i{
 
 }
 
-.all_button, .reservation_button{
+.all_button{
     border-radius: 0.3rem;
     color:white;
     background: #082f61bd;
@@ -483,7 +483,17 @@ a.pageButtons.active  i{
     /*padding: 1rem;*/
     position: relative;
     /*border-radius: 1.6rem;*/
-    /*overflow: auto;*/
+    /*overflow: auto;*/ 
+}
+.carouselSection{
+
+    font-size: 1.5rem;
+    /*width:50rem ;*/
+    width: 100%;    
+    /*height: calc(100vh - 10rem - 2.2rem );*/
+    padding: 3rem 0rem;
+    /*padding: 1rem;*/
+    position: relative;
 }
 .slide{
     position: absolute;
@@ -577,14 +587,14 @@ a.pageButtons.active  i{
     right:0;
     top:-100%;
     position:absolute;
-    background-color: #284d574a;
-    backdrop-filter:blur(0.3rem);
+    background-color: #284d5739;
+    backdrop-filter:blur(0.5rem);
     border-radius: 1rem;  
     color: #ffffff; 
     padding:2rem 1rem;
     justify-content: end;
     align-items: center;
-    transition: 1.2s ease-in-out;
+    transition: 0.8s ease-in-out;
 }
 .containersMenuPage:hover .card_body{
     top: 0;  
@@ -597,6 +607,7 @@ a.pageButtons.active  i{
     font-weight: 700;
     margin: 1rem 1rem 1rem 1rem;
     letter-spacing: 0.1rem;
+    color: white;
 }
 .description_menu_card{
     font-size: 1.5rem;
@@ -676,7 +687,7 @@ a.pageButtons.active  i{
     gap: 0;
     flex-wrap: wrap;
     max-width: 100%;
-    padding: 1rem;
+    padding: 3rem 0rem;
 }
 .aboutUsDescription::first-letter{
     margin-left: 2rem;
@@ -708,13 +719,13 @@ a.pageButtons.active  i{
     height: 100% ;
     right:-100%;
     position:absolute;
-    background-color: #284d574a;
-    backdrop-filter:blur(0.4rem);
+    background-color: #284d5734;
+    backdrop-filter:blur(0.6rem);
     border-radius: 0.3rem;  
     color: #ffffff; 
     justify-content: center;
     align-items: center;
-    transition: 1.2s ease-in-out;
+    transition: 0.8s ease-in-out;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 2.5rem;
@@ -745,14 +756,18 @@ a.pageButtons.active  i{
 }
 .socialMediaIconsContainer{
     display: flex;
-    align-items: center;
+
     padding-left: 1rem;
     gap: 1rem;
 }
 .socialMediaIcons{
     font-size: 3rem;
-    padding-top: 0.5rem;
+  
     align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 .socialMediaIcons:hover{
     cursor: pointer;
@@ -784,7 +799,9 @@ a.pageButtons.active  i{
 
 body{
     color:var(--c-body);
-    line-height:1.2;
+    min-width: fit-content;
+
+   
 }
 h1,h2,h3,h4,h5,h6{
     color: var(--c-dark);
@@ -814,17 +831,18 @@ h1,h2,h3,h4,h5,h6{
 
 /*------------------ NAV BAR ----------------------*/
 .navbar{
-    background-color: black;
+   
     position: fixed;
     width: 100%;
     height: var(--n-height);
     display: flex;
     top:0;
     left: 0;
+    z-index: 2;
 }
 .brand{
     color:white;
-    font-size: 1.8rem;
+    font-size: 3rem;
 }
 
 ul{
@@ -838,13 +856,15 @@ ul{
 }
 .nav_buttons{
     display: flex;
+    
 }
 .nav_buttons li:not(:last-child){
     margin-right: 2.5rem;
 }
 .nav_buttons li a{
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     text-decoration: none;
     letter-spacing: 0.1rem;
 
@@ -862,6 +882,10 @@ ul{
 
 #menuBurgerIcon{
     color: white;
+    font-size: 3rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    font-weight: 600;
    
 }
 
@@ -871,13 +895,8 @@ ul{
     align-items: center;
     justify-content:space-between;
 }
-.scrolled{
-    background-color: white;
-}
 
-.scrolled .brand{
-    color: var(--c-dark)
-}
+
 .scrolled .nav_buttons{
     color: var(--c-dark)
 }
@@ -891,47 +910,116 @@ ul{
     color: var(--c-dark)
 }
 
-body   {
-    height: 2000px;
-}
-.hero{
+.nav_buttons.active .navbar{
+    color:var(--c-dark);
+    background-color: white;
     
-    height: calc(100vh - var(--n-height));
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./images/hero.jpg);
+}
+
+.nav_buttons.active ~ .brand{
+    color:var(--c-dark);
+    
+    
+}
+
+
+.hero{
+    height: 100vh ;
+    /*height: calc(100vh - var(--n-height));*/
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(./images/hero.jpg);
     background-position: center;
     background-size: cover;
 }
 .heroSection{
     max-width: 1280px;
-    margin: var(--n-height) auto 0 auto;
-    height: calc(100vh - var(--n-height));
+    margin: 0 auto;
+    /*margin: var(--n-height) auto 0 auto;
+    height: calc(100vh - var(--n-height));*/
+    height: 100vh;
     display: flex;
     align-items: center;
 }
 .callToActionContainer{
     width: fit-content;
-    
-    margin-left: 2rem;
+    display: flex;
+    flex-direction: column  ;
+    margin-left: 4rem;
 }
 .callToActionHeader{
     color: white;
-    font-size: 8rem;
+    font-size: 9rem;
     font-weight: 600;
-    letter-spacing:0.1rem;
+    letter-spacing:0.2rem;
 
 }
 .callToActionParagraph{
-    max-width: 35rem;
+    max-width: 30rem;
     color: white;
     line-height: 1.2;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
 }
 
 .callActionButton{
     font-size:2rem;
     padding: 1rem 3rem 1rem 3rem ;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-left: 1rem;
 }
+.text-gold-gradient {
+    background: radial-gradient(
+      64.18% 64.18% at 71.16% 35.69%,
+      #d3be72 0.89%,   /* Adjust this gold color (e.g., #F7D764) */
+      #f1d461 17.23%,   /* You can set multiple color stops with different shades of gold */
+      #e2c152 42.04%,
+      #e1b934 55.12%,
+      #f9cf43 71.54%,
+      #ffd332e9 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    max-width: 1280px;
+    margin: 0 auto;
+
+   height: 100%;  
+}
+.gallerySectionContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0rem;
+}
+.footer{
+    background-color:var(--c-dark);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+.footerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+
+
 
 
 @media screen and (max-width: 768px) {
@@ -946,6 +1034,9 @@ body   {
     }
     .slide{
         flex-direction: column;
+    }
+    .carouselImageContainer0, .carouselImageContainer1,.carouselImageContainer2{
+        display: none;
     }
 
     .title_reservation {
@@ -962,6 +1053,7 @@ body   {
     .galleryGridContainer{
         display:flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .nav_buttons{
@@ -975,16 +1067,22 @@ body   {
         height: 0;
         overflow: hidden;
         justify-content: center;
+        align-items: center;        
         
     }
 
     .nav_buttons.active{
-        height: 11rem ;
-
+        height: 13rem ;
+        background-color: white;
+        display: flex;
     }
-    .nav_buttons li{
-        padding: 0.6rem 0;
-    }   
+    .nav_buttons li:not(:last-child){
+        margin-right: 0rem;
+    }
+    .nav_buttons.active li{
+        padding: 0.6rem 0;   
+    }
+   
     .hamburger{
         display: block;
         
@@ -993,9 +1091,38 @@ body   {
     .nav_buttons li a{
         color: var(--c-dark);
 
-  };
+  }
+    .footerContainer{
+        justify-content: center;
+    }
+
+    .navbar:not(.scrolled) && .nav_buttons.active then navbar {
 
 
+    }
+    .callToActionHeader{
+        font-size: 5rem;
+    }
+    .callToActionParagraph{
+        font-size: 1.5rem;
+        max-width: 20rem;
+        margin-top: 0;
+    }
+    .hero{
+        display: flex;
+
+    }
+    .heroSection{
+        align-items: center;
+        margin: 0 0 0 2rem;
+
+
+    }
+    .callToActionContainer{
+        margin: 0 0 10rem 0;
+        align-items: start;
+        text-align:start;
+    }
 
 
 }
