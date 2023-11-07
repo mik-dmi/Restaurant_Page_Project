@@ -69,104 +69,7 @@ html,body{
     height: fit-content;
     width: fit-content;
 }
-.header_width_adjustment{
-    left:var(--width-side-bar);
-    width:calc(100% );
-    transition: all .7s ease-in-out;
-}
-.sidebar{
-    height:100%;
-    z-index: 3;
-    width: var(--width-sidebar-closed);
-    padding: 0.4rem 1rem;
-    background-color:rgb(84 51 1 / 81%) ;
-    transition: width 0.1s ease-in-out ;
-    grid-row: 1 /span2;
-    position: sticky;
-} 
-.sidebar.active{
-    width:var(--width-side-bar);
-}
 
-
-.sidebar .top_side_bar .logo{
-    color: white;
-    display: flex;
-    height: 5rem;
-    width:0.5rem;
-    align-items: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.1s ease-in-out;   
-}
-.sidebar.active .top_side_bar .logo{
-    opacity: 1;
-    width: 100%;
-    transition: all 0.2s ease-in-out;   
-{/**/}   
-}
-.top_side_bar{
-    display: flex;
-    gap: 0.9rem;
-    height: 5rem;
-}
-.top_side_bar .logo{
-    font-size: 2.6rem;
-    margin-right: 0.8rem;
-}
-.sidebar ul li{
-    list-style: none;
-    height: 3rem;
-    width: 90%;
-    margin: 0.5rem 0.8rem 0.5rem 0.8rem; 
-}
-.sidebar ul li a{
-    color: white;
-    text-decoration: none;
-    border-radius: 0.1rem;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-}
-.sidebar ul li a i:hover{
-    background-color: #ffffff;
-    color: var(--sidebar-cor-hover-icon);
-}
-.sidebar.active ul li a:hover{
-    background-color: #ffffff;
-    color:var(--sidebar-cor-hover-icon);
-}
-a.pageButtons.active  i{
-    background-color: aliceblue;
-    color:var(--sidebar-cor-hover-icon);
-}
-.sidebar.active ul li a.pageButtons.active {
-    background-color: aliceblue;
-    color:   var(--sidebar-cor-hover-icon);
-}
-
-.sidebar ul{
-    display: flex;
-    flex-direction: column;
-    justify-content:  center;
-}
-.sidebar ul li a i{
-    min-width: fit-content;
-    text-align: center;
-    height: 2rem;
-    border-radius: 1rem;   
-}
-.sidebar .nav_item{
-    height: fit-content;
-    width: fit-content;
-    opacity:0;
-    margin-left: 1rem;
-}
-.sidebar.active .nav_item{
-    opacity:1;
-    position: relative;
-    transition: opacity 0.5s ease-in 0.2s;
-}
 .mainSection{
     flex-grow: 1;
     height: 100vh;
@@ -181,7 +84,7 @@ a.pageButtons.active  i{
     align-items: center;
     width: 100%;
      
-    padding: 6rem 3rem 4rem 2rem; 
+    padding: 6rem 3rem 4rem 3rem; 
 }
 .textInCarousel1{
     color: #ffffff;
@@ -231,7 +134,7 @@ a.pageButtons.active  i{
 }
 
 .HeaderOfPages{
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 600;
     color: var(--gold-borders-lighter);
     background-color:var(--color-title-background);
@@ -240,7 +143,7 @@ a.pageButtons.active  i{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28rem;
+    max-width: 28rem;
     align-self: center;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     margin-bottom: 4rem;
@@ -275,11 +178,11 @@ a.pageButtons.active  i{
     display:grid ;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 3rem;
-    padding: 0rem 2rem;
+    gap: 2rem;
+    padding: 0rem 1rem;
 }
 .galleryGridCell{
-    width: 20rem;
+    max-width: 17rem;
     max-height: 20rem;
     border-radius: 1rem;
     transition: 0.3s ease-in-out;
@@ -353,7 +256,7 @@ a.pageButtons.active  i{
 }
 .containerReservationForms{
     display:flex;
-    column-gap: 4rem;
+    column-gap: 2rem;
     color: #ffffff;
     justify-content: center;
     flex-wrap: wrap;
@@ -371,6 +274,11 @@ a.pageButtons.active  i{
     position: relative;
     margin: 1rem 0;
 }
+.containerReservationForms label{
+    max-width: 11rem;
+    font-size: 1.3rem;
+
+}
 .containerReservationForms input{
     border: none;
     font-weight: 400;
@@ -383,7 +291,7 @@ a.pageButtons.active  i{
     border: none;
     border-bottom:0.2rem solid #c1bdbd ;
     transition: 0.3s ease;
-    width: 15rem;
+    max-width: 12rem;
 }
 .containerReservationForms input:valid + label{
      color:var(--gold-borders-lighter);
@@ -560,13 +468,13 @@ a.pageButtons.active  i{
 }*/
 /*-------------------------------------- Menu cards -----------------------------------------------*/
 .containersMenuPage{
-    width: 22rem;
+    max-width: 17rem;
     border-radius: 1.5rem;
     overflow: hidden;
     border: 0.5rem solid white;
     position:relative;  
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    margin: 1rem 2rem 0 3rem;
+    margin: 1rem 1rem 0 1rem;
     /*  padding: 1rem; */
     background-color: rgba(65, 177, 177, 0.328);
     display: flex;
@@ -646,7 +554,7 @@ a.pageButtons.active  i{
 }
 .drinks_container, .food_container{
     display: grid;
-    grid-template-columns: repeat(3, 25rem);
+    grid-template-columns: repeat(3, auto);
     gap:1rem;
     margin-bottom: 3rem;
 }
@@ -760,7 +668,7 @@ a.pageButtons.active  i{
     padding-left: 1rem;
     gap: 1rem;
 }
-.socialMediaIcons{
+.socialMediaIcons,.socialMediaIcons_white{
     font-size: 3rem;
   
     align-self: center;
@@ -772,6 +680,9 @@ a.pageButtons.active  i{
 .socialMediaIcons:hover{
     cursor: pointer;
     transform: scale(1.2);
+}
+.socialMediaIcons_white{
+    gap:2rem;
 }
 .chefsNames{
     display: flex;
@@ -797,12 +708,10 @@ a.pageButtons.active  i{
 
   }
 
-body{
-    color:var(--c-body);
-    min-width: fit-content;
 
-   
-}
+
+
+
 h1,h2,h3,h4,h5,h6{
     color: var(--c-dark);
     line-height: 1.2;
@@ -838,7 +747,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     top:0;
     left: 0;
-    z-index: 2;
+    z-index: 4;
 }
 .brand{
     color:white;
@@ -883,7 +792,7 @@ ul{
 #menuBurgerIcon{
     color: white;
     font-size: 3rem;
-    margin-right: 2rem;
+    /*margin-right: 2rem;*/
     margin-top: 1rem;
     font-weight: 600;
    
@@ -921,17 +830,35 @@ ul{
     
     
 }
-
+body{
+    color:var(--c-body);
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+     
+}
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    max-width: 1280px;
+    height: 100%;  
+}
 
 .hero{
     height: 100vh ;
     /*height: calc(100vh - var(--n-height));*/
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(./images/hero.jpg);
+   
     background-position: center;
     background-size: cover;
+    display: flex;
 }
 .heroSection{
-    max-width: 1280px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(./images/hero.jpg);
+    background-size: cover;
+    width: 100%;
     margin: 0 auto;
     /*margin: var(--n-height) auto 0 auto;
     height: calc(100vh - var(--n-height));*/
@@ -983,16 +910,7 @@ ul{
     text-fill-color: transparent;
   }
   
-.body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center ;
-    max-width: 1280px;
-    margin: 0 auto;
 
-   height: 100%;  
-}
 .gallerySectionContainer{
     display: flex;
     flex-direction: column;
@@ -1003,7 +921,8 @@ ul{
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;  
+    width: 100%;
 }
 .footerContainer{
     display: flex;
@@ -1022,11 +941,35 @@ ul{
 
 
 
-@media screen and (max-width: 768px) {
+
+
+
+
+
+@media screen and (max-width: 700px) {
     /* Change the grid layout to a single column for smaller screens */
     .drinks_container, .food_container {
-      grid-template-columns: 1fr;
+      grid-template-columns: auto;
     }
+    html{
+        font-size: 14px;
+    }
+    .aboutUsLeftContainer, .aboutUsRightContainer{
+        max-width: 100%;
+    }
+    .aboutUsLeftContainer{
+        padding: 0%;
+        text-align: start;
+    }
+    .aboutUsDescription::first-letter{
+        margin-left: 0rem;
+    }
+    .HeaderOfPages{
+        font-size: 4rem;
+
+    }
+
+
     .carouselImageContainer0, .carouselTextAndTitleContainer0 ,
     .carouselImageContainer1, .carouselTextAndTitleContainer1,
     .carouselImageContainer2, .carouselTextAndTitleContainer2,.slide{
@@ -1093,12 +1036,7 @@ ul{
 
   }
     .footerContainer{
-        justify-content: center;
-    }
-
-    .navbar:not(.scrolled) && .nav_buttons.active then navbar {
-
-
+        
     }
     .callToActionHeader{
         font-size: 5rem;
@@ -1108,21 +1046,156 @@ ul{
         max-width: 20rem;
         margin-top: 0;
     }
-    .hero{
-        display: flex;
 
-    }
-    .heroSection{
-        align-items: center;
-        margin: 0 0 0 2rem;
-
-
-    }
+   
     .callToActionContainer{
         margin: 0 0 10rem 0;
         align-items: start;
         text-align:start;
     }
+    .chefImage{
+        max-width: 170px;
+        font-size: 10px;
 
+    }
+    .chefsNames{
+        font-size: 2rem;
+    }
+    .groupImage{
+        max-width: 350px;
+    }
+    .aboutUsRightContainer{
+        border: 0;
+    }
+    .socialMediaIcons{
+        font-size: 1rem;
+    }
+    .heroSection{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+    .callToActionContainer{
+        margin-top: 10rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        max-height: fit-content;
+        height: 60%;
+        
+    }
+    .input{
 
+    }
+    .callActionButton{
+        margin: 0;
+    }
+    .callToActionParagraph{
+        display: none;
+        
+    
+    }
+    .containerReservationForms{
+        gap:2rem;
+    }
+    .containerReservationForms input {
+        max-width: 8rem;
+
+    }
+    .carousel_button{
+        font-size: 2rem;
+        top:80%;
+    }
+    .footerContainer {
+        font-size: 0.5rem;
+    }
+    .socialMediaIcons{
+        height: 3rem;
+    }
+    .title_card, .price_in_card{
+        font-size: 2rem;
+        margin-right: 0;
+    }
+    .description_menu_card{
+        font-size: 0.8rem;
+    }
+    .order_button{
+        font-size: 1rem;
+    }
+    .containerReservationForms label{
+        max-width: 15rem;
+        font-size: 0.8rem;
+        flex-wrap: nowrap   ;
+    
+    }
+    .containerReservationForms input:focus + label {
+        font-size: 0.8rem;     
+    }
+    .socialMediaIcons_white{
+        font-size: 1rem;
+    }
 }
+@media  (min-width: 700px) and (max-width: 1024px) {
+    .galleryGridCell {
+      max-width: 16rem; 
+    
+    }
+    .galleryGridContainer{
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows:auto;
+    }
+    .galleryGridContainer div:last-child{
+        display: none;
+    }
+    .drinks_container, .food_container {
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows:auto;
+
+    }
+  
+    .containerReservationForms{
+        gap:4rem;
+    }
+
+    .carouselImageContainer0, .carouselImageContainer1,.carouselImageContainer2{
+        display: none;
+    }
+    .carouselImageContainer0, .carouselTextAndTitleContainer0 ,
+    .carouselImageContainer1, .carouselTextAndTitleContainer1,
+    .carouselImageContainer2, .carouselTextAndTitleContainer2,.slide{
+        width: 100%;
+    }
+    .title_card, .price_in_card{
+        font-size: 1.8rem;
+        margin-right: 0;
+    }
+    .description_menu_card{
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .order_button{
+        font-size: 1rem;
+    }
+    .aboutUsRightContainer{
+        border: 0;
+    }
+    .aboutUsLeftContainer, .aboutUsRightContainer{
+        max-width: 100%
+    }
+    .titlesAboutUs{
+        text-align: center;
+    }
+    .aboutUsLeftContainer{
+        padding: 1rem;
+    }
+    .aboutUsDescription::first-letter{
+        margin-left: 0rem;
+    }
+    .footerContainer{
+        font-size: 1rem;
+    }
+    .socialMediaIcons_white{
+        font-size: 2rem;
+    }
+  }
