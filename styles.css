@@ -398,6 +398,7 @@ html,body{
     font-size: 1.5rem;
     /*width:50rem ;*/
     width: 100%;    
+ 
     /*height: calc(100vh - 10rem - 2.2rem );*/
     padding: 3rem 0rem;
     /*padding: 1rem;*/
@@ -565,7 +566,7 @@ html,body{
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    max-width: 50%;
+    max-width: 48%;
 }
 
 .aboutUsLeftContainer{
@@ -1130,12 +1131,23 @@ body{
     .callToActionContainer{
         padding-left: 0;
     }
+
 }
-@media  (min-width: 700px) and (max-width: 1024px) {
+
+@media screen and (max-width: 370px) {
+.description_menu_card{
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+
+}
+}
+@media  (min-width: 700px) and (max-width: 1200px) {
     .galleryGridCell {
       max-width: 16rem; 
     
     }
+
+ 
     .galleryGridContainer{
         grid-template-columns: 1fr 1fr ;
         grid-template-rows:auto;
