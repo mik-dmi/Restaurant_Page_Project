@@ -468,7 +468,7 @@ html,body{
 }*/
 /*-------------------------------------- Menu cards -----------------------------------------------*/
 .containersMenuPage{
-    max-width: 17rem;
+    max-width: 20rem;
     border-radius: 1.5rem;
     overflow: hidden;
     border: 0.5rem solid white;
@@ -496,7 +496,7 @@ html,body{
     top:-100%;
     position:absolute;
     background-color: #284d5739;
-    backdrop-filter:blur(0.5rem);
+    backdrop-filter:blur(0.2rem);
     border-radius: 1rem;  
     color: #ffffff; 
     padding:2rem 1rem;
@@ -511,17 +511,17 @@ html,body{
     border-color:  rgba(205, 155, 30, 0.826);
 }
 .title_card{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     margin: 1rem 1rem 1rem 1rem;
     letter-spacing: 0.1rem;
     color: white;
 }
 .description_menu_card{
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
     height: 18rem;
-    margin: 0.4rem 0rem 0rem 1.5rem;
+    margin: 0.4rem 0rem 1rem 1.5rem;
     font-weight: 300;
     word-wrap: break-word;  
 }
@@ -529,7 +529,7 @@ html,body{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     margin-bottom: 2rem;    
 }
@@ -537,8 +537,8 @@ html,body{
 .order_button{
     padding: 0.5rem 1rem ;
     height: fit-content;
-    margin-left:2rem ;
-    font-size: 2rem;
+    margin-left:1rem ;
+    font-size: 1.2rem;
     border: none;
     border-radius: 0.3rem;
     color: white;
@@ -628,7 +628,7 @@ html,body{
     right:-100%;
     position:absolute;
     background-color: #284d5734;
-    backdrop-filter:blur(0.6rem);
+    backdrop-filter:blur(0.5rem);
     border-radius: 0.3rem;  
     color: #ffffff; 
     justify-content: center;
@@ -1112,16 +1112,9 @@ body{
     .socialMediaIcons{
         height: 3rem;
     }
-    .title_card, .price_in_card{
-        font-size: 2rem;
-        margin-right: 0;
-    }
-    .description_menu_card{
-        font-size: 0.8rem;
-    }
-    .order_button{
-        font-size: 1rem;
-    }
+
+
+
     .containerReservationForms label{
         max-width: 15rem;
         font-size: 0.8rem;
@@ -1168,17 +1161,9 @@ body{
     .carouselImageContainer2, .carouselTextAndTitleContainer2,.slide{
         width: 100%;
     }
-    .title_card, .price_in_card{
-        font-size: 1.8rem;
-        margin-right: 0;
-    }
-    .description_menu_card{
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
-    .order_button{
-        font-size: 1rem;
-    }
+
+
+  
     .aboutUsRightContainer{
         border: 0;
     }
