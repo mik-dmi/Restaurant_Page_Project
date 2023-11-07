@@ -2,7 +2,7 @@ const drinksData = [
     {
         name: 'Blueberry Smoothie',
         price: "5,50€",
-        description: "A healthy and flavorful smoothie made with blueberries, yogurt, banana, and a touch of honey.",
+        description: "A healthy and flavorful smoothie made with blueberries, Greek yogurt, milk, banana, lemon, and a touch of honey.",
         image:'./images/blueberry.jpg'
     },
     {
@@ -28,13 +28,13 @@ const foodData = [
     {
         name: 'Chicken Sandwich',
         price: "11,70€",
-        description: "Delight in our Chicken Sandwich: a juicy, seasoned chicken breast, served in a soft bun with fresh toppings, for a mouthwatering bite.",
+        description: "Delight in our Chicken Sandwich: a juicy, seasoned chicken breast, served in a soft bun with fresh toppings.",
         image:'./images/tost.jpg'
     },
     {
         name: 'Coconut Shrimp',
         price: "16,70€",
-        description: "A creamy and decadent dessert featuring a strawberry topping on a rich cheesecake base. It makes for a sweet ending to a meal, especially after sipping on a Strawberry Daiquiri.",
+        description: "A creamy dessert featuring a strawberry topping on a cheesecake base. It makes for a sweet ending to a meal.",
         image:'./images/coconut_shrimp.jpg'
     },
     {
@@ -46,13 +46,13 @@ const foodData = [
     {
         name: 'Strawberry Cheesecake',
         price: "9,80€",
-        description: "A creamy and indulgent dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
+        description: "A creamy dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
         image:'./images/strawberry_cheesecake.jpg'
     },
     {
         name: 'Chocolate Fondue',
         price: "7,80€",
-        description: "A dessert option where you can dip fruits, marshmallows, or pieces of cake into a warm, melted chocolate sauce. It's a delightful treat to enjoy alongside a Chocolate Milkshake.",
+        description: "A dessert option where you can dip fruits, marshmallows, or pieces of cake into a warm, melted chocolate sauce.",
         image:'./images/chocolate_fondue.jpg'
     },
 ];
