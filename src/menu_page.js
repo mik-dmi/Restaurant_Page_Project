@@ -14,7 +14,7 @@ const drinksData = [
     {
         name: 'Chocolate Milkshake',
         price: "7,40€",
-        description: "A creamy and indulgent dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
+        description: "A creamy  dessert-like drink made with milk, ice cream, and chocolate, topped with whipped cream and chocolate shavings.",
         image:'./images/chocolate_milkshake.jpg'
     },
 ];
@@ -22,7 +22,7 @@ const foodData = [
     {
         name: 'Tropical Fruit Salad',
         price: "12,80€",
-        description: "A refreshing salad with a mix of tropical fruits like pineapple, mango, and kiwi, served with a citrusy dressing. It pairs well with drinks like Mango Lassi and Pina Colada.",
+        description: "A salad with a mix of tropical fruits like pineapple, mango, and kiwi, served with a citrusy dressing.",
         image:'./images/tropical_fruit_salad.jpg'
     }, 
     {
@@ -40,7 +40,7 @@ const foodData = [
     {
         name: 'Double Cheeseburger',
         price: "14,70€",
-        description: "Experience burger perfection with our Double Cheeseburger: two succulent patties, layers of melted cheese, and pure delight in every bite.",
+        description: "Experience our Double Cheeseburger: two patties, layers of melted cheese, and pure delight in every bite.",
         image:'./images/hamburger.jpg'
     },
     {
@@ -123,9 +123,7 @@ function foodsContainers(data, container){
 export const menuPage = ()=>{
     
     const bodyContainer = document.querySelector('.body');
-    while (bodyContainer.firstChild) {
-        bodyContainer.removeChild(bodyContainer.firstChild);
-    }
+
     const containerFoodsDrinks = document.createElement('div');
     containerFoodsDrinks.classList.add("containerFoodsDrinks")
     containerFoodsDrinks.id = "menu"

@@ -13,7 +13,7 @@ export const baseLinePage = ( ) => {
     const heroSection= document.createElement('div');
     heroSection.classList.add('heroSection');
     heroSection.id ="home"
-    heroContainer.appendChild(heroSection);
+    
 
     const callToActionContainer= document.createElement('div');
     callToActionContainer.classList.add('callToActionContainer');
@@ -178,7 +178,7 @@ aboutUs.classList.add('nav_item')
      
     //mainContainer.appendChild(mainSectionContainer)
     navbar.appendChild(navbarContainer);
-    mainContainer.appendChild(heroContainer);
+    mainContainer.appendChild(heroSection);
     mainContainer.appendChild(bodyContainer);
     mainContainer.appendChild(footerSection); //main page template 
     
@@ -249,19 +249,19 @@ aboutUs.classList.add('nav_item')
     footerContainer.appendChild(socialMediaIconsContainer)
     
     const instagram = document.createElement('i'); 
-    instagram.classList.add('socialMediaIcons')
+    instagram.classList.add('socialMediaIcons_white')
     instagram.classList.add('bx')
     instagram.classList.add('bxl-instagram') 
     socialMediaIconsContainer.appendChild(instagram)
 
     const twitter = document.createElement('i');
-    twitter.classList.add('socialMediaIcons')
+    twitter.classList.add('socialMediaIcons_white')
     twitter.classList.add('bx')
     twitter.classList.add('bxl-twitter') 
     socialMediaIconsContainer.appendChild(twitter)
 
     const facebook = document.createElement('i'); 
-    facebook.classList.add('socialMediaIcons')
+    facebook.classList.add('socialMediaIcons_white')
     facebook.classList.add('bx')
     facebook.classList.add('bxl-meta') 
     socialMediaIconsContainer.appendChild(facebook)
