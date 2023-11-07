@@ -1056,7 +1056,7 @@ body{
         text-align:start;
     }
     .chefImage{
-        max-width: 170px;
+        max-width: 150px;
         font-size: 10px;
 
     }
@@ -1064,7 +1064,7 @@ body{
         font-size: 2rem;
     }
     .groupImage{
-        max-width: 350px;
+        max-width: 310px;
     }
     .aboutUsRightContainer{
         border: 0;
@@ -1086,9 +1086,6 @@ body{
         max-height: fit-content;
         height: 60%;
         
-    }
-    .input{
-
     }
     .callActionButton{
         margin: 0;
