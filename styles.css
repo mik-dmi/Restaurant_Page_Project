@@ -1261,9 +1261,9 @@ body{
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         max-height: fit-content;
-        height: 60%;
+        
         gap:0.5rem;
         
     }
