@@ -23,7 +23,7 @@ export const baseLinePage = ( ) => {
     /*heroSection.classList.add('heroSection');*/
     heroSectionContainer.classList.add('heroSectionContainer');
     heroSection.appendChild(heroSectionContainer);
-    
+  
 
     const callToActionContainer= document.createElement('div');
     callToActionContainer.classList.add('callToActionContainer');
@@ -34,7 +34,7 @@ export const baseLinePage = ( ) => {
     heroSectionContainer.appendChild(saladHeroContainer);
 
     const imageSaladHero= document.createElement('img');
-    imageSaladHero.src = '../dist/images/heroImg.png'
+    imageSaladHero.src = './images/heroImg.png'
     imageSaladHero.classList.add('saladHeroImage');
     saladHeroContainer.appendChild(imageSaladHero);
 
