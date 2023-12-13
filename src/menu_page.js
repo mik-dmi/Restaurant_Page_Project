@@ -7,7 +7,7 @@ const Data = [
         category: 'Beverage',
     },
     {
-        name: 'Pina Colada',
+        name: 'Piña Colada',
         price: "7,50€",
         description: "A tropical cocktail made with rum, coconut cream, and pineapple juice, often served with a pineapple slice and a maraschino cherry.",
         image:'./images/pina_colada.jpg',

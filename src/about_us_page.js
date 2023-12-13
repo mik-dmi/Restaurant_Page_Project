@@ -171,7 +171,7 @@ locationHeader.textContent = "Location";
 const descriptionOne = document.createElement('p'); 
 descriptionOne.classList.add("aboutUsDescription");
 aboutUsRightContainer.appendChild(descriptionOne)
-descriptionOne.textContent = "123 Main Street,Los Santos, US, 1823-23";
+descriptionOne.textContent = "123 Main Street, Los Santos, US, 1823-23";
 
 const openHourHeader = document.createElement('h3'); 
 openHourHeader.classList.add("subHeaderAboutUs");
