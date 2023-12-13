@@ -418,7 +418,7 @@ html,body{
     position:absolute;
     background-color: #284d5739;
     backdrop-filter:blur(0.9rem);
-    border-radius: 1rem;  
+    
     color: #ffffff; 
     padding:2rem 1rem;
     justify-content: end;
