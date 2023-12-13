@@ -1,4 +1,4 @@
-import {mainPage} from './home_page.js'
+import {mainPage} from './reservationsection.js'
 export const baseLinePage = ( ) => {
 
     const mainContainer = document.querySelector('body');
@@ -11,19 +11,48 @@ export const baseLinePage = ( ) => {
     heroContainer.classList.add('hero');
 
     const heroSection= document.createElement('div');
+    /*heroSection.classList.add('heroSection');*/
+    heroSection.classList.add('DivSvgHero');
+  
     heroSection.classList.add('heroSection');
+
     heroSection.id ="home"
+
+
+    const heroSectionContainer= document.createElement('div');
+    /*heroSection.classList.add('heroSection');*/
+    heroSectionContainer.classList.add('heroSectionContainer');
+    heroSection.appendChild(heroSectionContainer);
     
 
     const callToActionContainer= document.createElement('div');
     callToActionContainer.classList.add('callToActionContainer');
-    heroSection.appendChild(callToActionContainer);
+    heroSectionContainer.appendChild(callToActionContainer);
+    
+    const saladHeroContainer= document.createElement('div');
+    saladHeroContainer.classList.add('pancakeHero');
+    heroSectionContainer.appendChild(saladHeroContainer);
+
+    const imageSaladHero= document.createElement('img');
+    imageSaladHero.src = '../dist/images/heroImg.png'
+    imageSaladHero.classList.add('saladHeroImage');
+    saladHeroContainer.appendChild(imageSaladHero);
+
+
+
+
+
     
     const callToActionHeader= document.createElement('h2');
     callToActionHeader.classList.add('callToActionHeader');
-    callToActionHeader.classList.add('text-gold-gradient')
     callToActionContainer.appendChild(callToActionHeader);
-    callToActionHeader.textContent = "CaliBrunch"
+    callToActionHeader.textContent = "Fresh & Tasty"
+
+    const callToActionSecondHeader= document.createElement('h2');
+    callToActionSecondHeader.classList.add('callToActionSecondHeader');
+    callToActionContainer.appendChild(callToActionSecondHeader);
+    callToActionSecondHeader.textContent = "Beach Bar"
+
 
     const callToActionParagraph= document.createElement('p');
     callToActionParagraph.classList.add('callToActionParagraph');
@@ -34,7 +63,16 @@ export const baseLinePage = ( ) => {
     buttonHero.classList.add('all_button');
     buttonHero.classList.add('callActionButton');
     callToActionContainer.appendChild(buttonHero);
-    buttonHero.textContent = "Reservation"
+    buttonHero.classList.add('scrollButtons')
+    
+  
+    const buttonHeroLink = document.createElement('a');
+    buttonHero.appendChild(buttonHeroLink);
+    buttonHeroLink.href = "#reservation";
+    buttonHeroLink.style.textDecoration = "none"
+    buttonHeroLink.style.color = "white"
+    buttonHeroLink.textContent = "Reservation"
+
 
 
     const navbarContainer = document.createElement('div');
@@ -61,6 +99,7 @@ export const baseLinePage = ( ) => {
     const listMenu = document.createElement('ul');
     navbarContainer.appendChild(listMenu);
     listMenu.classList.add("nav_buttons")
+    listMenu.classList.add('scrollButtons')
 
 /*------------------------------------------------------------------------------------------------------*/
     const partOfListMenu = document.createElement('li');
@@ -189,16 +228,19 @@ aboutUs.classList.add('nav_item')
       
         if (scrollY >= 100) {
             navbar.classList.add('scrolled');
-            navbar.style.background = 'white';
-            nameOfRestaurant.style.color = '#333';
-            menuLogoIconContainer.style.color= '#333';
-           
+            navbar.style.background = '#6b0b17';
+            nameOfRestaurant.style.color = 'white';
+            menuLogoIconContainer.style.color= 'white';
+
         } else {
             navbar.classList.remove('scrolled');
             if(!(listMenu.classList.contains('active')) ){
                 navbar.style.background = 'none';
-                nameOfRestaurant.style.color = 'white';
+                nameOfRestaurant.style.color = '#fac562';
                 menuLogoIconContainer.style.color= 'white';
+                if (window.innerWidth > 600) {
+                    nameOfRestaurant.style.color = 'rgb(63, 63, 70)';
+                }
              
 
             }
@@ -209,13 +251,13 @@ aboutUs.classList.add('nav_item')
 
         listMenu.classList.toggle('active')
        if(listMenu.classList.contains('active')) {
-            navbar.style.background = 'white';
-            nameOfRestaurant.style.color = '#333';
-            menuLogoIconContainer.style.color= '#333';
+            navbar.style.background = '#6b0b17';
+            nameOfRestaurant.style.color = 'white';
+            menuLogoIconContainer.style.color= 'white';
         }
         if(!(listMenu.classList.contains('active')) && !(navbar.classList.contains('scrolled'))){
             navbar.style.background = 'none';
-            nameOfRestaurant.style.color = 'white';
+            nameOfRestaurant.style.color = '#e2c62be3';
             menuLogoIconContainer.style.color= 'white';
             }
      
@@ -236,35 +278,36 @@ aboutUs.classList.add('nav_item')
     
     
     
+    const footLinksContainer = document.createElement('div'); 
+    footLinksContainer.classList.add("footLinksContainer");
+    footerContainer.appendChild(footLinksContainer)
     
-    
-    
-    
-    const spanFooter = document.createElement('span');
-    spanFooter.textContent = "CopyRight Ⓒ 2023. All rights are reserved";
-    footerContainer.appendChild(spanFooter); 
+    const footLinksHome = document.createElement('span'); 
+    footLinksHome.classList.add('footLinks')
+    footLinksContainer.appendChild(footLinksHome)
+    footLinksHome.textContent = "Home"
 
-    const socialMediaIconsContainer = document.createElement('div'); 
-    socialMediaIconsContainer.classList.add("socialMediaIconsContainer");
-    footerContainer.appendChild(socialMediaIconsContainer)
+    const footLinksAbout = document.createElement('span'); 
+    footLinksAbout.classList.add('footLinks')
+    footLinksContainer.appendChild(footLinksAbout)
+    footLinksAbout.textContent = "About"
+
+    const footLinksMenu = document.createElement('span'); 
+    footLinksMenu.classList.add('footLinks')
+    footLinksContainer.appendChild(footLinksMenu)
+    footLinksMenu.textContent = "Our Menu"
+
+    const footLinksSponsors = document.createElement('span'); 
+    footLinksSponsors.classList.add('footLinks')
+    footLinksContainer.appendChild(footLinksSponsors)
+    footLinksSponsors.textContent = "Sponsors"
+
+    const footLinksBlog = document.createElement('span'); 
+    footLinksBlog.classList.add('footLinks')
+    footLinksContainer.appendChild(footLinksBlog)
+    footLinksBlog.textContent = "Blog"
+
     
-    const instagram = document.createElement('i'); 
-    instagram.classList.add('socialMediaIcons_white')
-    instagram.classList.add('bx')
-    instagram.classList.add('bxl-instagram') 
-    socialMediaIconsContainer.appendChild(instagram)
-
-    const twitter = document.createElement('i');
-    twitter.classList.add('socialMediaIcons_white')
-    twitter.classList.add('bx')
-    twitter.classList.add('bxl-twitter') 
-    socialMediaIconsContainer.appendChild(twitter)
-
-    const facebook = document.createElement('i'); 
-    facebook.classList.add('socialMediaIcons_white')
-    facebook.classList.add('bx')
-    facebook.classList.add('bxl-meta') 
-    socialMediaIconsContainer.appendChild(facebook)
 
 
 

@@ -1,59 +1,67 @@
-const drinksData = [
+const Data = [
     {
         name: 'Blueberry Smoothie',
         price: "5,50€",
         description: "A healthy and flavorful smoothie made with blueberries, Greek yogurt, milk, banana, lemon, and a touch of honey.",
-        image:'./images/blueberry.jpg'
+        image:'./images/blueberry.jpg',
+        category: 'Beverage',
     },
     {
         name: 'Pina Colada',
         price: "7,50€",
         description: "A tropical cocktail made with rum, coconut cream, and pineapple juice, often served with a pineapple slice and a maraschino cherry.",
-        image:'./images/pina_colada.jpg'
+        image:'./images/pina_colada.jpg',
+        category: 'Beverage',
     },
     {
         name: 'Chocolate Milkshake',
         price: "7,40€",
         description: "A creamy  dessert-like drink made with milk, ice cream, and chocolate, topped with whipped cream and chocolate shavings.",
-        image:'./images/chocolate_milkshake.jpg'
+        image:'./images/chocolate_milkshake.jpg',
+        category: 'Beverage',
     },
-];
-const foodData = [
     {
         name: 'Tropical Fruit Salad',
         price: "12,80€",
         description: "A salad with a mix of tropical fruits like pineapple, mango, and kiwi, served with a citrusy dressing.",
-        image:'./images/tropical_fruit_salad.jpg'
+        image:'./images/tropical_fruit_salad.jpg',
+        category: 'Salad',
     }, 
     {
         name: 'Chicken Sandwich',
         price: "11,70€",
         description: "Delight in our Chicken Sandwich: a juicy, seasoned chicken breast, served in a soft bun with fresh toppings.",
-        image:'./images/tost.jpg'
+        image:'./images/tost.jpg',
+        category: 'Sandwich',
     },
     {
         name: 'Coconut Shrimp',
-        price: "16,70€",
-        description: "A creamy dessert featuring a strawberry topping on a cheesecake base. It makes for a sweet ending to a meal.",
-        image:'./images/coconut_shrimp.jpg'
+        price: '16.70€',
+        description: 'Indulge in our Coconut Shrimp: crispy, golden-fried delights with a luscious coconut batter. A perfect blend of savory and tropical sweetness.' ,
+        image:'./images/coconut_shrimp.jpg',
+        category: 'Shrimp',
+
     },
     {
         name: 'Double Cheeseburger',
         price: "14,70€",
         description: "Experience our Double Cheeseburger: two patties, layers of melted cheese, and pure delight in every bite.",
-        image:'./images/hamburger.jpg'
+        image:'./images/hamburger.jpg',
+        category: 'Burger'
     },
     {
         name: 'Strawberry Cheesecake',
         price: "9,80€",
         description: "A creamy dessert-like drink made with milk, ice cream, and chocolate syrup, often topped with whipped cream and chocolate shavings.",
-        image:'./images/strawberry_cheesecake.jpg'
+        image:'./images/strawberry_cheesecake.jpg',
+        category: 'Desert'
     },
     {
         name: 'Chocolate Fondue',
         price: "7,80€",
         description: "A dessert option where you can dip fruits, marshmallows, or pieces of cake into a warm, melted chocolate sauce.",
-        image:'./images/chocolate_fondue.jpg'
+        image:'./images/chocolate_fondue.jpg',
+        category: 'Desert'
     },
 ];
 
@@ -62,6 +70,7 @@ function foodsContainers(data, container){
     this.price = data.price;
     this.description = data.description;
     this.image = data.image;
+    this.category = data.category;
     
     
     const menuContainers = document.createElement('div');
@@ -98,24 +107,49 @@ function foodsContainers(data, container){
     textInBody.textContent = this.description;
     cardBody.appendChild(textInBody);
 
+      
+    
     const textAndPriceContainer = document.createElement('div');
     textAndPriceContainer.classList = 'textAndPriceContainer';
-    cardBody.appendChild(textAndPriceContainer);
+    menuContainers.appendChild(textAndPriceContainer);
 
 
 
+
+
+    const foodCategory = document.createElement('p');
+    foodCategory.classList = 'foodCategory';
+    foodCategory.textContent = this.category;
+    textAndPriceContainer.appendChild(foodCategory);
+
+
+    const foodTitle = document.createElement('p');
+    foodTitle.classList = 'foodTitle';
+    foodTitle.textContent = this.name;
+    textAndPriceContainer.appendChild(foodTitle);
+    
 
     
+
+    const priceContainer = document.createElement('div');
+    priceContainer.classList = 'priceContainer';
+    textAndPriceContainer.appendChild(priceContainer);
+
+    const priceTag = document.createElement('p');
+    priceTag.classList.add('priceTag');
+    priceTag.textContent = 'Price:';
+    priceContainer.appendChild(priceTag);
+
     const priceInBody = document.createElement('p');
     priceInBody.classList = 'price_in_card';
     priceInBody.textContent = this.price;
-    textAndPriceContainer.appendChild(priceInBody);
-
+    priceContainer.appendChild(priceInBody);
+/*
     const orderButton = document.createElement('button');
     orderButton.classList = 'order_button';
     orderButton.textContent = "Order";
     textAndPriceContainer.appendChild(orderButton);
-   
+ */  
 }
 
 
@@ -129,46 +163,49 @@ export const menuPage = ()=>{
     containerFoodsDrinks.id = "menu"
     bodyContainer.appendChild(containerFoodsDrinks)
 
-    const arrDrink = [];
-    const arrFood = [];
+    const arrProducts = [];
+   
+
+
+
+
+
+
+    const subHeader = document.createElement('div');
+    subHeader.classList = "subHeader";
+
+    subHeader.style.alignItems = "center";
+
+    containerFoodsDrinks.appendChild(subHeader);
+
+    const subHeaderText = document.createElement('p');
+    subHeaderText.classList = "subHeaderText";
+    subHeader.appendChild(subHeaderText);
+    subHeaderText.textContent = "Menus For An Ideal Brunch"
+
+    const subHeaderImage = document.createElement('img');
+    subHeaderImage.classList = "subHeaderImage";
+    subHeader.appendChild(subHeaderImage);
+    subHeaderImage.src = "./images/welcomeImages/spoon.svg"
+    
 
     const menuTitleContainer = document.createElement('div');
-    menuTitleContainer.classList = "HeaderOfPages";
+    menuTitleContainer.classList = "sectionHeader";
     containerFoodsDrinks.appendChild(menuTitleContainer);
-
+    
     const spanMenuTitleContainer = document.createElement('span');
-    spanMenuTitleContainer.classList.add("text-gold-gradient" )
-    spanMenuTitleContainer.textContent = "Menu";
+    spanMenuTitleContainer.textContent = "Our Menu";
     menuTitleContainer.appendChild(spanMenuTitleContainer);
 
-    const drinksTitleContainer = document.createElement('div');
-    drinksTitleContainer.classList = "SubHeaderOfPages"  
-    drinksTitleContainer.textContent = "Beverages"
-    containerFoodsDrinks.appendChild(drinksTitleContainer);
 
+    const ProductContainer = document.createElement('div');
+    ProductContainer.classList = "product_container"
+    containerFoodsDrinks.appendChild(ProductContainer);
 
-    const drinksContainer = document.createElement('div');
-    drinksContainer.classList = "drinks_container"
-    containerFoodsDrinks.appendChild(drinksContainer);
-
-    drinksData.forEach((drink, index) => {
-        arrDrink[index] = new foodsContainers(drink, drinksContainer);
+    Data.forEach((drink, index) => {
+        arrProducts[index] = new foodsContainers(drink, ProductContainer);
       });
 
-      const foodTitleContainer = document.createElement('div');
-      foodTitleContainer.classList = "SubHeaderOfPages"  
-      foodTitleContainer.textContent = "Food"
-      containerFoodsDrinks.appendChild(foodTitleContainer);
-
-      const foodContainer = document.createElement('div');
-      foodContainer.classList = "food_container"
-      containerFoodsDrinks.appendChild(foodContainer);
-
-      foodData.forEach((food, index) => {
-        arrFood[index] = new foodsContainers(food, foodContainer);
-      });
-
-      
     
     
 

@@ -1,112 +1,44 @@
 import DOMPurify from 'dompurify';
 
-export const mainPage = ()=>{
-    const homePageContainers = [];
-    const carouselImageContainer = [];
-    const carouselTextAndTitleContainer = [];
-    const titleIfBody = [];
-    const textInBody = [];
-    const dataOfTitleInTheBody = ["","Open Hours","Location"]
-    const dataTextInTheBody = ['',
-    `<strong>Monday to Friday:</strong> 09:00-22:00<br>
-    <strong>Saturday:</strong> 10:00-23:00<br>
-    <strong>Sunday:</strong> 10:00-21:00`, `CaliBrunch is conveniently located at:<br><br>
-    <strong>123 Main Street,</strong><br>
-    <strong>Los Santos, US, 1823-23 </strong><br>
-    We are situated in the heart of Los Santos, making it easy for you to find us and enjoy our delicious cuisine!
-    ` ];
-    const backgroundImages = ['./images/images_carousel/zero.jpg','./images/images_carousel/one.jpg','./images/images_carousel/two.jpg',]
+export const reservationSection = ()=>{
+
+    const backgroundImages = './images/images_carousel/zero.jpg'
 
     const bodyContainer = document.querySelector('.body');
     
-    const sectionContainer = document.createElement('section')  
-    sectionContainer.classList.add('carouselSection')
+  
+    
+
+
 
     
-    const carouselContainer = document.createElement('div')  
-    carouselContainer.classList.add('carousel')
-
-    const carouselButtonLeft = document.createElement('button')
-    carouselButtonLeft.classList.add('carousel_button');
-    carouselButtonLeft.classList.add('prev');
-    const spanContainerLeft = document.createElement('span')
-    spanContainerLeft.innerHTML ='&#10151;'
-    spanContainerLeft.classList.add('flipped-arrow')
-    const carouselButtonRight = document.createElement('button')
-    carouselButtonRight.classList.add('carousel_button');
-    carouselButtonRight.classList.add('next');
-    const spanContainerRight = document.createElement('span')
-    spanContainerRight.innerHTML  ='&#10151;'
-
-    const aboutSection = document.createElement('div')
-    aboutSection.classList.add("about_section")
-
-    carouselButtonLeft.appendChild(spanContainerLeft)
-    carouselButtonRight.appendChild(spanContainerRight)
-
-  /*
     
-    while (bodyContainer.firstChild) {
-        bodyContainer.removeChild(bodyContainer.firstChild);
-    }; */ 
-    bodyContainer.appendChild(sectionContainer)
-    sectionContainer.appendChild(carouselContainer)
-    /*bodyContainer.appendChild(aboutSection)*/
-
-    carouselContainer.appendChild(carouselButtonLeft)
-    carouselContainer.appendChild(carouselButtonRight)
-    
-    for(let i = 0; i < 3; i++ ){
-        homePageContainers[i] = document.createElement('li');
-
-        carouselImageContainer[i] = document.createElement('div');
-        carouselImageContainer[i].classList.add(`carouselImageContainer${[i]}`)
+        const homePageContainers = document.createElement('div');
+        homePageContainers.id = "reservation"
+        const carouselImageContainer = document.createElement('div');
+        carouselImageContainer.classList.add(`carouselImageContainer`)
         
-        carouselTextAndTitleContainer[i] = document.createElement('div');
-        carouselTextAndTitleContainer[i].classList.add(`carouselTextAndTitleContainer${[i]}`)
+        const carouselTextAndTitleContainer = document.createElement('div');
+        carouselTextAndTitleContainer.classList.add(`carouselTextAndTitleContainer`)
         //make the the image and text container change in the second position of the carousel
-        if( i === 1){
-            homePageContainers[i].appendChild(carouselTextAndTitleContainer[i])
-            homePageContainers[i].appendChild(carouselImageContainer[i])  
-        }else{
-            homePageContainers[i].appendChild(carouselImageContainer[i])
-            homePageContainers[i].appendChild(carouselTextAndTitleContainer[i])
-        }
 
-        homePageContainers[i].id = i
-        if ( i >0){
-            titleIfBody[i] = document.createElement('p');
-            titleIfBody[i].classList = 'titleInCarousel';
-            textInBody[i] = document.createElement('p');
-            textInBody[i].classList = `textInCarousel${[i]}`;
 
-            titleIfBody[i].textContent = dataOfTitleInTheBody[i];
-            textInBody[i].innerHTML  = dataTextInTheBody[i];
-            
-            carouselTextAndTitleContainer[i].appendChild(titleIfBody[i]);
-            carouselTextAndTitleContainer[i].appendChild(textInBody[i]);  
-        }
-        homePageContainers[i].classList.add(`containersHomePage${[i]}`);
-        homePageContainers[i].classList.add("slide");
-        carouselContainer.appendChild(homePageContainers[i]);
+
+
+        homePageContainers.appendChild(carouselImageContainer)
+        homePageContainers.appendChild(carouselTextAndTitleContainer)
+    
+
+
+        homePageContainers.classList.add(`containersHomePage`);
+        homePageContainers.classList.add("slide");
+        bodyContainer.appendChild(homePageContainers);
 
         const imageInCarousel = document.createElement('img');
-        imageInCarousel.src = backgroundImages[i];
+        imageInCarousel.src = backgroundImages;
         imageInCarousel.classList = 'imageInCarousel';
-        carouselImageContainer[i].appendChild(imageInCarousel);
-        
-    };
-
-    /*buttonReservation.classList.add('reservation_button');*/
-    homePageContainers[0].setAttribute('data-active', '');
-    carouselButtonLeft.addEventListener("click", ()=> {
-        CarouselButtonsFunction(homePageContainers, '-1');
-    })
-    carouselButtonRight.addEventListener("click", ()=> {
-        CarouselButtonsFunction(homePageContainers, '1');
-    })
-    ReservationForms(carouselTextAndTitleContainer[0])
-
+        carouselImageContainer.appendChild(imageInCarousel); 
+        ReservationForms(carouselTextAndTitleContainer)
 }
 
 function ReservationForms(reservationFormsContainer){
@@ -117,10 +49,35 @@ function ReservationForms(reservationFormsContainer){
     bookForm.method = "post";
    
         // Create the div with class "forms"
+        const welcomeHeaderContainer = document.createElement('div');
+        welcomeHeaderContainer.classList = "welcomeHeaderContainer";
+        reservationFormsContainer.appendChild(welcomeHeaderContainer); 
+        
+        const subHeader = document.createElement('div');
+        subHeader.classList = "subHeader";
+        welcomeHeaderContainer.appendChild(subHeader);
+        subHeader.style.alignItems = "center"
+          
+    
+        const titleContainer = document.createElement('h2');
+        titleContainer.classList = "sectionHeader";
+        subHeader.appendChild(titleContainer); 
+        titleContainer.textContent = "Book A Table"
+        titleContainer.style.color = "rgba(227, 199, 43, 0.89)"
+        titleContainer.style.padding = 0
+        
 
-    const titleReservation = document.createElement("h1");
-    titleReservation.classList.add("title_reservation");
-    titleReservation.textContent = "Book a Table"
+        const subHeaderImage = document.createElement('img');
+        subHeaderImage.classList = "subHeaderImage";
+        subHeader.appendChild(subHeaderImage);
+        subHeaderImage.src = "./images/welcomeImages/spoon.svg"
+    
+      
+
+
+
+
+
 
     const containerReservationForms = document.createElement("div");
     containerReservationForms.classList.add("containerReservationForms");
@@ -216,11 +173,12 @@ function ReservationForms(reservationFormsContainer){
 
     const addButton = document.createElement("button");
     addButton.type = "submit";
+    addButton.id = "reservation"
     addButton.classList.add("reservation_button");
     addButton.classList.add("all_button");
     addButton.textContent = "Book Now";
 
-    reservationFormsContainer.appendChild(titleReservation)
+  
 
     leftSideReservationForms.appendChild(nameDiv);
     leftSideReservationForms.appendChild(phoneDiv);
@@ -269,20 +227,4 @@ function ReservationForms(reservationFormsContainer){
 
 
 
-function CarouselButtonsFunction(carouselContainers, offset) {
-    const activeSlide = document.querySelector("[data-active]");
-    
-    // Check if activeSlide is defined
-    if (activeSlide) {
-        let newIndex = parseInt(activeSlide.id) + parseInt(offset);
-        if (newIndex < 0) newIndex = carouselContainers.length - 1;
-        if (newIndex >= carouselContainers.length) newIndex = 0;
-
-        carouselContainers[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
-    }
-
-    
-
-}
 

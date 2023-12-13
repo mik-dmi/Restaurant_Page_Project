@@ -30,8 +30,7 @@ const aboutUsData = [
 
 
 export const aboutUsPage = () => {
-    const titles = [];
-    const description = [];
+
     
     const bodyContainer = document.querySelector('.body');
 
@@ -41,76 +40,67 @@ export const aboutUsPage = () => {
     containerAboutUs.id= "about"
     bodyContainer.appendChild(containerAboutUs)
 
+
     const aboutUsLeftContainer = document.createElement('div');
     aboutUsLeftContainer.classList.add("aboutUsLeftContainer");
     containerAboutUs.appendChild(aboutUsLeftContainer)    
+
+
 
     const aboutUsRightContainer = document.createElement('div');
     aboutUsRightContainer.classList.add("aboutUsRightContainer");
     containerAboutUs.appendChild(aboutUsRightContainer) 
 
+
+   
+
+
 /*-------------------------------------------- Left Side of the Page ---------------------------------------------------------*/    
-    const aboutUsTitleContainer = document.createElement('div');
-    aboutUsTitleContainer.classList = "HeaderOfPages";
-    aboutUsLeftContainer.appendChild(aboutUsTitleContainer);
+  
+  
 
-    const spanMTitleContainer = document.createElement('span');
-    spanMTitleContainer.classList.add("text-gold-gradient" )
-    spanMTitleContainer.textContent = "About Us";
-    aboutUsTitleContainer.appendChild(spanMTitleContainer);   
+    const headerContainer = document.createElement('div');
+    headerContainer.classList = "headerContainer";
+    aboutUsRightContainer.appendChild(headerContainer); 
+    headerContainer.style.alignItems = "center"
+
+    const subHeader = document.createElement('div');
+    subHeader.classList = "subHeader";
+    headerContainer.appendChild(subHeader);
+
+    const subHeaderText = document.createElement('p');
+    subHeaderText.classList = "subHeaderText";
+    subHeader.appendChild(subHeaderText);
+    subHeaderText.textContent = "Contact"
+
+    const subHeaderImage = document.createElement('img');
+    subHeaderImage.classList = "subHeaderImage";
+    subHeader.appendChild(subHeaderImage);
+    subHeaderImage.src = "./images/welcomeImages/spoon.svg"
+  
+
+    const titleContainer = document.createElement('h2');
+    titleContainer.classList = "sectionHeader";
+    headerContainer.appendChild(titleContainer); 
+    titleContainer.textContent = "Find Us";
 
 
 
 
 
-    for(let i = 0;  i < 3; i++){
-        titles[i] = document.createElement('h1'); 
-        titles[i].classList.add("titlesAboutUs");
-        aboutUsLeftContainer.appendChild(titles[i])
-        titles[i].textContent = aboutUsData[i].title;
-
-        description[i] = document.createElement('p'); 
-        description[i].classList.add("aboutUsDescription");
-        aboutUsLeftContainer.appendChild(description[i])
-        description[i].textContent = aboutUsData[i].description;
-
-    }
 
 
-    const socialMediaTitle = document.createElement('h1'); 
-    socialMediaTitle.classList.add("titlesAboutUs");
-    aboutUsLeftContainer.appendChild(socialMediaTitle)
-    socialMediaTitle.textContent = "Follow us on Social Media";
 
-    const socialMediaIconsContainer = document.createElement('div'); 
-    socialMediaIconsContainer.classList.add("socialMediaIconsContainer");
-    aboutUsLeftContainer.appendChild(socialMediaIconsContainer)
-    
-  /*  const instagramIconContainer = document.createElement('a'); 
-    instagramIconContainer.classList.add("socialMediaIcons");
-    socialMediaIconsContainer.appendChild(instagramIconContainer)*/
-    
-    const instagram = document.createElement('img'); 
-    instagram.classList.add('socialMediaIcons')
-    instagram.src= "./images/social_media_icon/instagram.png"
-    socialMediaIconsContainer.appendChild(instagram)
 
-    const twitter = document.createElement('img');
-    twitter.classList.add('socialMediaIcons')
-    twitter.src= "./images/social_media_icon/twitter.png"
-    socialMediaIconsContainer.appendChild(twitter)
+      
 
-    const facebook = document.createElement('img'); 
-    facebook.classList.add('socialMediaIcons')
-    facebook.src= "./images/social_media_icon/facebook.png"
-    socialMediaIconsContainer.appendChild(facebook)
 
 /*------------------------------------------------------------ Right Side of the Page ---------------------------------------------------------*/
 
 
 const chefsImageContainer = document.createElement('div'); 
 chefsImageContainer.classList.add("chefsImagesContainer");
-aboutUsRightContainer.appendChild(chefsImageContainer);
+aboutUsLeftContainer.appendChild(chefsImageContainer);
 
 const chefOneContainer = document.createElement('div'); 
 chefOneContainer.classList.add("ContainerForChef");
@@ -154,7 +144,7 @@ secondChefImage.src ='./images/about_us_photos/chef_2.jpg'
 const containerGroupImage = document.createElement('div');
 containerGroupImage.classList.add("groupImage")
 containerGroupImage.classList.add("groupImageContainer")
-aboutUsRightContainer.appendChild(containerGroupImage);
+aboutUsLeftContainer.appendChild(containerGroupImage);
 
 const groupImage = document.createElement('img'); 
 groupImage.classList.add("groupImage");
@@ -172,6 +162,32 @@ const crewName = document.createElement('div');
 crewName.classList.add("chefsNames")
 cardGroupImage.appendChild(crewName);
 crewName.textContent = "Our Team";
+
+const locationHeader = document.createElement('h3'); 
+locationHeader.classList.add("subHeaderAboutUs");
+aboutUsRightContainer.appendChild(locationHeader)
+locationHeader.textContent = "Location";
+
+const descriptionOne = document.createElement('p'); 
+descriptionOne.classList.add("aboutUsDescription");
+aboutUsRightContainer.appendChild(descriptionOne)
+descriptionOne.textContent = "123 Main Street,Los Santos, US, 1823-23";
+
+const openHourHeader = document.createElement('h3'); 
+openHourHeader.classList.add("subHeaderAboutUs");
+aboutUsRightContainer.appendChild(openHourHeader)
+openHourHeader.textContent = "Opening Hours";
+
+const descriptionTwo = document.createElement('p'); 
+descriptionTwo.classList.add("aboutUsDescription");
+aboutUsRightContainer.appendChild(descriptionTwo)
+descriptionTwo.textContent = "Mon - Fri: 09:00 Am - 10:00 Pm";
+
+const descriptionThree = document.createElement('p'); 
+descriptionThree.classList.add("aboutUsDescription");
+aboutUsRightContainer.appendChild(descriptionThree)
+descriptionThree.textContent = "Sat - Sun: 10:00 Am - 11:00 Pm";
+
 
 
 }

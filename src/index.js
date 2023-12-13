@@ -1,13 +1,15 @@
-import {mainPage} from './home_page.js'
+import {reservationSection} from './reservationsection.js'
 import {baseLinePage} from './base_line.js'
 import {menuPage} from './menu_page.js'
 import {galleryPage} from './gallery_page.js'
 import {aboutUsPage} from './about_us_page.js'
+import {welcomePage} from './welcomePage.js'
 
 /*----------------------------------- Set up when the page is loaded --------------------------------- */
 baseLinePage();
+welcomePage();
 menuPage();
-mainPage();
+reservationSection();
 galleryPage();
 aboutUsPage();
 const menuButtons = document.querySelectorAll('.pageButtons');
@@ -15,7 +17,7 @@ const homeButton = document.getElementById('homeButton');
 homeButton.classList.toggle('active');                           
 
 document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".nav_buttons a");
+  const navLinks = document.querySelectorAll(".scrollButtons a");
 
   navLinks.forEach(function (link) {
       link.addEventListener("click", function (e) {

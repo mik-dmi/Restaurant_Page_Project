@@ -3,6 +3,10 @@
     src: url('./fonts/DelagioScript.otf');  
 }
 :root {
+    --primary-color: #333;  /* #cdb562 #E05E08 */    
+    --secondary-color: #6b0b17;
+    --inner-titles-color: rgba(227, 199, 43, 0.89);
+    --button-color: #6b0b17;
     --carousel-height: 40rem;
     --width-side-bar: 20rem;
     --width-sidebar-closed: 5.5rem;
@@ -10,9 +14,9 @@
     --gold-borders: rgba(137, 121, 31, 0.826);
     --gold-borders-lighter: rgba(226, 198, 43, 0.891);
     --sidebar-cor-hover-icon:#44280d ;
-    --forms-background-color:  #332400;
-    --gold-titles: rgba(205, 155, 30, 0.93);
-    --color-title-background:#133865fc;
+    --forms-background-color:  #333;
+    --gold-titles: #cd9b1eed;
+    --color-title-background:rgba(226, 198, 43, 0.891);
     --color-subtitle-background:#125cb7ee;
     /*rgba(205, 155, 30, 0.826)*/
   }
@@ -32,6 +36,7 @@ html,body{
     scroll-behavior: smooth;
     font-size: 16px;
     font-family: 'PT Sans', sans-serif;
+    background-color: #F5F5F5;
 }
 
 
@@ -72,7 +77,7 @@ html,body{
 
 .mainSection{
     flex-grow: 1;
-    height: 100vh;
+    
 }
 
 
@@ -84,7 +89,7 @@ html,body{
     align-items: center;
     width: 100%;
      
-    padding: 6rem 3rem 4rem 3rem; 
+    padding: 3rem 1rem 2rem 1rem; 
 }
 .textInCarousel1{
     color: #ffffff;
@@ -116,12 +121,7 @@ html,body{
     max-height: 20rem;
     border-radius: 1rem;
 }*/
-.imageContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-}
+
 
 .priceInBody{
     font-size: 3rem;
@@ -180,16 +180,18 @@ html,body{
     grid-template-rows: 1fr 1fr 1fr;
     gap: 2rem;
     padding: 0rem 1rem;
+    padding-top: 2rem;
+    
 }
 .galleryGridCell{
-    max-width: 17rem;
-    max-height: 20rem;
-    border-radius: 1rem;
+    height: 20rem;
+    width: 200px;
     transition: 0.3s ease-in-out;
+    padding: 0.5rem;
 }
 .galleryGridCell:hover{
-    transform: scale(1.2);
-    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
 
 }
 /*-------------------------------   Carousel   --------------------------------------------------*/
@@ -197,63 +199,31 @@ html,body{
     transform: scaleX(-1);
     display: inline-block;
   }
-.containersHomePage0, .containersHomePage1, .containersHomePage2{
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    border-radius: 0;
-    font-size: 1.5rem;
+.containersHomePage{
     display: flex;
-    flex-direction: column;
-    align-items: center;    
+    flex-direction: row;
+    align-items: center;  
+    height: 550px;
+    padding:3rem 1rem 2rem 1rem ;
+
 }
-.carouselTextAndTitleContainer0{
-    width: 100%;
+.carouselTextAndTitleContainer{
+    width: 50%;
     height: 100%;
-    display: grid;
-    grid-template-columns: auto auto;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;   
     padding: 2rem 2rem 2rem 2rem;
     background-color:var(--forms-background-color);
     overflow: auto;
 }
-.carouselTextAndTitleContainer2,.carouselTextAndTitleContainer1 {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    padding: 2rem;  
-    background-color: var(--forms-background-color);
-    overflow: auto ;
-    row-gap: 2rem ;
-}
-.carouselTextAndTitleContainer2{
-    row-gap: 0rem ; 
-}
-.title_reservation, .titleInCarousel{
-    font-size: 5rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    font-variant-caps: all-petite-caps;
-    color: Var(--gold-borders-lighter);
-    border-bottom: 0.3rem solid var(--gold-borders-lighter);  
-}
+
+
 .titleInCarousel{
     display: flex;
     justify-content: center;
 }
-.carouselTextAndTitleContainer0{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    height: 100%;
-    width: 50%;
-    gap:2rem;
-}
+
 .containerReservationForms{
     display:flex;
     column-gap: 2rem;
@@ -324,7 +294,7 @@ html,body{
     border-radius: 0.3rem;
     font-size: 1.5rem;
     padding: 1rem 3rem 1rem 3rem ; 
-    margin-top: 3rem;
+    margin-top: 2rem;
 
 
 }
@@ -332,7 +302,7 @@ html,body{
 .all_button{
     border-radius: 0.3rem;
     color:white;
-    background: #082f61bd;
+    background: var(--secondary-color);
     cursor: pointer;
     font-weight: 600;  
     width: fit-content;
@@ -346,6 +316,9 @@ html,body{
 
 #bookForm{
     margin-top: 1rem;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
 .all_button::before{
     content: "";
@@ -381,40 +354,10 @@ html,body{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }*/
-.carousel{
-    /*background-color: rgb(65, 177, 177);*/
-    font-size: 1.5rem;
-    /*width:50rem ;*/
-    width: 100%;    
-    /*height: calc(100vh - 10rem - 2.2rem );*/
-    height: var(--carousel-height);
-    /*padding: 1rem;*/
-    position: relative;
-    /*border-radius: 1.6rem;*/
-    /*overflow: auto;*/ 
-}
-.carouselSection{
 
-    font-size: 1.5rem;
-    /*width:50rem ;*/
-    width: 100%;    
- 
-    /*height: calc(100vh - 10rem - 2.2rem );*/
-    padding: 3rem 0rem;
-    /*padding: 1rem;*/
-    position: relative;
-}
-.slide{
-    position: absolute;
-    inset:0;
-    opacity:0;
-    transition: 220ms opacity ease-in-out;
-    transition-delay: 220ms;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-}
-.carouselImageContainer0,.carouselImageContainer1,.carouselImageContainer2{
+
+
+.carouselImageContainer{
     height: 100%;
     width: 50%;
     object-fit: cover;
@@ -425,39 +368,8 @@ html,body{
 .imageInCarousel{
     width: 100%;  
 }
-.slide[data-active]{
-    opacity:1;
-    z-index: 1;
-    transition-delay: 0ms;
-}
-.carousel_button{
-    position: absolute;
-    background: none;
-    border: none;
-    font-size: 4rem;
-    top:40%;
-    z-index: 2;
-    color: rgba(255, 255, 255, 0.88);
-    cursor: pointer;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    margin: 2rem;
-    background-color: rgba(0, 0, 0, 0.301);
-}
-.carousel_button:hover,
-.carousel_button:focus{
-    color: white;
-    background-color:rgba(0, 0, 0, 0.5); ;
-}
-.carousel_button:focus{
-    outline: 1px solid black;
-}
-.carousel_button.prev{
-    left:1rem;
-}
-.carousel_button.next{
-    right:1rem;
-}
+
+
 /*---------------------------------------------------------------------------------*/
 /*.create_a_book_card{
     padding: 0.5rem;
@@ -469,40 +381,48 @@ html,body{
 }*/
 /*-------------------------------------- Menu cards -----------------------------------------------*/
 .containersMenuPage{
-    max-width: 20rem;
-    border-radius: 1.5rem;
+    height: 30rem;
+    width: 20rem;
     overflow: hidden;
-    border: 0.5rem solid white;
     position:relative;  
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     margin: 1rem 1rem 0 1rem;
     /*  padding: 1rem; */
-    background-color: rgba(65, 177, 177, 0.328);
+    background-color:var(--primary-color);
     display: flex;
+    flex-direction: column;
     align-self: center;
     justify-self: center;
+}
+.imageContainer{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: 22rem;
 }
 .imageInTheMenu{
     width: 100%;
     height:100%;
     object-fit: cover;
-    border-radius: 1rem; 
+    object-position: center;
+    overflow: hidden;
+  
 }
 .card_body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100% ;
+    height: 22rem;
     right:0;
     top:-100%;
     position:absolute;
     background-color: #284d5739;
-    backdrop-filter:blur(0.2rem);
+    backdrop-filter:blur(0.9rem);
     border-radius: 1rem;  
     color: #ffffff; 
     padding:2rem 1rem;
     justify-content: end;
-    align-items: center;
+    align-items: start;
     transition: 0.8s ease-in-out;
 }
 .containersMenuPage:hover .card_body{
@@ -528,11 +448,34 @@ html,body{
 }
 .textAndPriceContainer{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: center;
-    font-size: 2rem;
+    padding: 1rem 1rem 1rem 1.5rem;
     font-weight: 500;
-    margin-bottom: 2rem;    
+    margin-bottom: 2rem; 
+    color: white;   
+    gap: 0.5rem;
+}
+.foodCategory{
+    font-size:1rem;
+    font-style: italic  ;
+    letter-spacing: 0.1rem;
+}
+.foodTitle{
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+.priceContainer{
+    display: flex;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+}
+.priceTag{
+    color:var(--inner-titles-color);
+    padding-right: 1rem;
 }
 
 .order_button{
@@ -553,11 +496,12 @@ html,body{
 .price_in_card{
     margin-right:2rem ; 
 }
-.drinks_container, .food_container{
+.product_container{
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap:1rem;
-    margin-bottom: 3rem;
+    padding-top: 1rem;
+  
 }
 /*---------------------------------------- About us Page --------------------------------------------*/
 
@@ -565,23 +509,30 @@ html,body{
 .aboutUsLeftContainer, .aboutUsRightContainer{
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem  0rem;
     max-width: 48%;
+    height: 620px;
+    color: var(--primary-color)
+}
+.aboutUsLeftContainer{
+    align-items: center;
 }
 
-.aboutUsLeftContainer{
-    padding-right: 6rem;
-    margin: 1rem;
-} 
+
 .chefsImagesContainer{
     display: flex;
     justify-content: center;
     column-gap: 1rem ;
-    width: fit-content;
+
+    height: 300px;
+    
     margin-bottom: 1rem;
+
 }
 .aboutUsRightContainer{
-    align-items: center;
+    align-items: start;
+    padding-left: 10rem;
+    border-left: 0.5rem solid var(--primary-color) ;
 }
 
 .titlesAboutUs{
@@ -590,23 +541,24 @@ html,body{
     
 .containerAboutUs{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0;
     flex-wrap: wrap;
-    max-width: 100%;
-    padding: 3rem 0rem;
+    width: 100%;
+    padding: 2rem 1rem;
 }
-.aboutUsDescription::first-letter{
-    margin-left: 2rem;
-}
+
 .aboutUsDescription{
     font-size: 1.5rem;
+    word-wrap: break-word;
+    
 }
-.aboutUsRightContainer{
-    border-left: 0.5rem solid var(--gold-borders);
-    max-width: 590px;
+.subHeaderAboutUs{
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
 }
 
 .chefsImageContainer{
@@ -614,13 +566,13 @@ html,body{
     align-items: center;
     justify-content: center;
     column-gap: 1rem;
-    object-fit: cover;
+   
     flex-wrap: wrap;
 }
 .ContainerForChef{
-    width: fit-content;
     position: relative;
     overflow: hidden;
+    object-fit: contain;
 }
 .card_body_chefs, .card_body_group_image{
     display: flex;
@@ -637,7 +589,7 @@ html,body{
     transition: 0.8s ease-in-out;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: 'Permanent Marker', cursive;
     
 }
@@ -645,7 +597,7 @@ html,body{
     right: 0;     
 }
 .groupImage{
-    max-width: 560px;
+    max-width: 400px;
     position: relative;
     overflow: hidden;
     border-radius: 0.3rem;
@@ -659,32 +611,32 @@ html,body{
     bottom: 0;    
 }
 .chefImage{
-    max-width: 270px;
-    height: 100%;
+    max-width: 15rem;
     border-radius: 0.3rem;
+    object-fit: contain;
+    object-position: center;
 }
 .socialMediaIconsContainer{
     display: flex;
-
-    padding-left: 1rem;
+    color:var(--forms-background-color);
+    padding-top: 1rem;
     gap: 1rem;
 }
-.socialMediaIcons,.socialMediaIcons_white{
+.socialMediaIcons{
     font-size: 3rem;
-  
+    cursor: pointer;
     align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    color:var(--secondary-color);
+    gap:2rem;
     
 }
 .socialMediaIcons:hover{
-    cursor: pointer;
     transform: scale(1.2);
 }
-.socialMediaIcons_white{
-    gap:2rem;
-}
+
 .chefsNames{
     display: flex;
     height: 100%;
@@ -714,9 +666,9 @@ html,body{
 
 
 h1,h2,h3,h4,h5,h6{
-    color: var(--c-dark);
+    color: var(--secondary-color);
     line-height: 1.2;
-    margin-bottom:10px;
+   
     font-weight:400;
 }
 
@@ -751,7 +703,7 @@ h1,h2,h3,h4,h5,h6{
     z-index: 4;
 }
 .brand{
-    color:white;
+ 
     font-size: 3rem;
 }
 
@@ -814,7 +766,7 @@ ul{
     color:var(--c-brand)
 }
 .scrolled .nav_buttons li a{
-    color:var(--c-dark)
+    color:white
 }
 .scrolled #menuBurgerIcon{
     color: var(--c-dark)
@@ -849,7 +801,7 @@ body{
 }
 
 .hero{
-    height: 100vh ;
+
     /*height: calc(100vh - var(--n-height));*/
    
     background-position: center;
@@ -857,45 +809,84 @@ body{
     display: flex;
 }
 .heroSection{
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(./images/hero.jpg);
     background-size: cover;
     width: 100%;
     margin: 0 auto;
     /*margin: var(--n-height) auto 0 auto;
     height: calc(100vh - var(--n-height));*/
-    height: 100vh;
+ 
+
+}
+.heroSectionContainer{
+    margin: 0 auto;
+    max-width: 1280px;
     display: flex;
     align-items: center;
+    height: 100vh;
+    max-height:900px ;
+    background-image: url('./images/heroBackground.png');
+    background-position: right center; 
+    width: 100%;
+    justify-content: center;
+    padding-top: 6rem;
+    gap:2rem;
 }
+
+.DivSvgHero{
+   
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.saladHeroImage{
+    width: 550px;
+
+
+    
+
+}
+.pancakeHero{
+ 
+}
+
+
 .callToActionContainer{
-    max-width: 1200px;
+    max-width: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column  ;
-    margin: 0 auto;
+   
     padding-left: 2rem;
 }
 .callToActionHeader{
-    color: white;
-    font-size: 8rem;
+    color: var(--secondary-color);
+    font-size: 5rem;
     font-weight: 600;
     letter-spacing:0.2rem;
 
 }
 .callToActionParagraph{
     max-width: 30rem;
-    color: white;
+    color:rgb(82 82 91);
     line-height: 1.2;
-    font-size: 2rem;
-    margin-left: 1rem;
-    margin-top: 2rem;
+    font-size: 1.5rem;
+  
+    margin-top: 1rem;
 }
 
 .callActionButton{
     font-size:2rem;
     padding: 1rem 3rem 1rem 3rem ;
-    margin-top: 3rem;
-    margin-left: 1rem;
+    margin-top: 2rem;
+    
+}
+.callToActionSecondHeader{
+    color: rgb(63 63 70);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing:0.2rem; 
+    font-style: italic; 
 }
 .text-gold-gradient {
     background: radial-gradient(
@@ -916,8 +907,32 @@ body{
 
 .gallerySectionContainer{
     display: flex;
+    padding: 3rem 1rem 2rem 1rem;
+    justify-content: space-between;
+    align-items: start ;
+    width: 100%;
+    min-height: 400px;
+    flex-wrap: wrap;
+}
+.galleryLeftSideContainer{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    
     flex-direction: column;
-    padding: 3rem 0rem;
+    
+}
+.paragraphGallery{
+    color:rgb(82 82 91);
+    padding-right: 0.5rem;
+    word-wrap: break-word;
+}
+.galleryRightSideContainer{
+    
+    display: flex;
+    justify-content: end;
+
 }
 .footer{
     background-color:var(--c-dark);
@@ -927,31 +942,192 @@ body{
     justify-content: center;  
     width: 100%;
 }
-.footerContainer{
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 2rem;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 
+
+/*----------------------------------------- Welcome Section ------------------------------------------*/
+
+.subHeaderText{
+    font-family: 'Cormorant Upright', serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+    font-size: 1.3rem;
+    color: var(--secondary-color)
 }
 
 
 
 
+.welcomeContainer{
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sectionHeader{
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    color: var(--color-title-background);
+    text-shadow: 0 0 var(--color-title-background);
 
+}
+.welcomeTitleContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.iconRestaurant{
+    margin-left: 0.5rem;
+}
+.welcomeCards{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding-bottom: 1rem;
+    overflow: hidden;
+    
+    
+}
+.welcomeCardsContainer{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+}
+.welcomeCardsImage{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center;
+    transition: all 0.3s ease-in;
+}
+.welcomeCardsImageContainer{
+    overflow:hidden;
+    width: 100%;
+    height: 400px;
 
+}
+.welcomeCardsImage:hover{
+    transform: scale(1.1);
+    
+}
+.welcomeCardsHeader{
+    padding-top: 1rem;
+ 
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--inner-titles-color)
+}
+.welcomeCardsParagraph{
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+.welcomeCardsButton{
+    padding: 1rem 2rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.subHeader{
+    display: flex;
+    flex-direction: column;
+    padding-left:0.5rem ;
+}
+.subHeaderImage{
+    width: 4rem;
+}
 
+.footLinksContainer{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.footerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: var(--c-dark);
+
+}
+
+.footLinks{
+    cursor: pointer;
+}
+.footLinks:hover{
+    color: var(--c-brand)
+}
+
+/* styles.css or in a style block in your HTML file */
+
+.DivSvgHero {
+    position: relative;
+  }
+  
+  .DivSvgHero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0; /* Adjusted to right */
+    width: 50%;
+    height: 100%;
+    background-color: var(--secondary-color); /* Set the background color of the right side */
+  }
+  
+  .heroSectionContainer {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+  }
+  
+  .callToActionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Add your additional styles as needed */
+  
 
 
 
 @media screen and (max-width: 700px) {
     /* Change the grid layout to a single column for smaller screens */
-    .drinks_container, .food_container {
+    .gallerySectionContainer{
+    flex-direction: column;
+    align-items: center;  
+    } 
+    .brand{
+        color:var(--c-brand)
+    }
+    .paragraphGallery{
+        text-align: center;
+    }
+    .galleryRightSideContainer{
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 2rem;
+    }   
+    .product_container {
       grid-template-columns: auto;
     }
     html{
@@ -959,10 +1135,19 @@ body{
     }
     .aboutUsLeftContainer, .aboutUsRightContainer{
         max-width: 100%;
+        padding: 1rem;
+        border:none;
+        height: fit-content;
+    }
+    .aboutUsRightContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .aboutUsLeftContainer{
-        padding: 0%;
+        padding: 0;
         text-align: start;
+        padding-top: 2rem;
     }
     .aboutUsDescription::first-letter{
         margin-left: 0rem;
@@ -973,15 +1158,11 @@ body{
     }
 
 
-    .carouselImageContainer0, .carouselTextAndTitleContainer0 ,
-    .carouselImageContainer1, .carouselTextAndTitleContainer1,
-    .carouselImageContainer2, .carouselTextAndTitleContainer2,.slide{
+    .carouselTextAndTitleContainer {
         width: 100%;
+        
     }
-    .slide{
-        flex-direction: column;
-    }
-    .carouselImageContainer0, .carouselImageContainer1,.carouselImageContainer2{
+    .carouselImageContainer{
         display: none;
     }
 
@@ -989,13 +1170,7 @@ body{
         font-size: 3rem;
         color: Var(--gold-borders);
     }
-
-    .textInCarousel1,.textInCarousel2{
-        font-size: 1.5rem;
-    }
-    .containersHomePage0, .containersHomePage1, .containersHomePage2{
-        font-size: 1rem;
-    }
+  
     .galleryGridContainer{
         display:flex;
         flex-direction: column;
@@ -1019,7 +1194,7 @@ body{
 
     .nav_buttons.active{
         height: 13rem ;
-        background-color: white;
+        background-color:#6b0b17 ;
         display: flex;
     }
     .nav_buttons li:not(:last-child){
@@ -1028,6 +1203,12 @@ body{
     .nav_buttons.active li{
         padding: 0.6rem 0;   
     }
+    .galleryLeftSideContainer{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+    }
    
     .hamburger{
         display: block;
@@ -1035,24 +1216,22 @@ body{
     }
 
     .nav_buttons li a{
-        color: var(--c-dark);
+        color: white;
 
   }
-    .footerContainer{
-        
-    }
-    .callToActionHeader{
-        font-size: 5rem;
-    }
+   
+
     .callToActionParagraph{
         font-size: 1.5rem;
         max-width: 20rem;
         margin-top: 0;
     }
-
+    .containersHomePage{
+            width: 100%;
+    }
    
     .callToActionContainer{
-        margin: 0 0 10rem 0;
+       
         align-items: start;
         text-align:start;
     }
@@ -1067,11 +1246,10 @@ body{
     .groupImage{
         max-width: 310px;
     }
-    .aboutUsRightContainer{
-        border: 0;
-    }
+
     .socialMediaIcons{
-        font-size: 1rem;
+        font-size: 2rem;
+        
     }
     .heroSection{
         display: flex;
@@ -1079,30 +1257,22 @@ body{
         justify-content: center;
     }
     .callToActionContainer{
-        margin-top: 10rem;
+        margin-top: 6rem;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         margin-bottom: 2rem;
         max-height: fit-content;
         height: 60%;
+        gap:0.5rem;
         
     }
+
     .callActionButton{
         margin: 0;
     }
-    .callToActionParagraph{
-        display: none;
-        
-    
-    }
-    .containerReservationForms{
-        gap:2rem;
-    }
-    .containerReservationForms input {
-        max-width: 8rem;
 
-    }
+ 
     .carousel_button{
         font-size: 2rem;
         top:80%;
@@ -1110,43 +1280,116 @@ body{
     .footerContainer {
         font-size: 0.5rem;
     }
-    .socialMediaIcons{
-        height: 3rem;
-    }
 
 
 
-    .containerReservationForms label{
-        max-width: 15rem;
-        font-size: 0.8rem;
-        flex-wrap: nowrap   ;
-    
-    }
+
     .containerReservationForms input:focus + label {
         font-size: 0.8rem;     
     }
-    .socialMediaIcons_white{
-        font-size: 1rem;
-    }
+
     .callToActionContainer{
         padding-left: 0;
     }
+ 
+    .socialMediaIconsContainer{
+        justify-content: center;
+    }
 
 }
-
-@media screen and (max-width: 370px) {
-.description_menu_card{
-    font-size: 1.1rem;
-    line-height: 1.3rem;
+@media screen and (max-width: 900px) {
+    .heroSectionContainer{
+        flex-direction: column;
+        gap:0;
+    }
+    .saladHeroImage{
+        width: 380px;
+    }
+    .callToActionHeader{
+        color:var(--color-title-background);
+         text-shadow: 0 0 var(--color-title-background);
+    }
+    .callToActionParagraph{
+        display:none;
+        
+    }
+    .callToActionContainer{
+        align-items: center;
+    }
+    .callToActionSecondHeader{
+        color:var(--color-title-background);
+         text-shadow: 0 0 var(--color-title-background);
+        padding-bottom: 1rem;
+        }
+    .containerAboutUs{
+        justify-content:center;
+        flex-direction: column-reverse;
+        
+    }
+    .aboutUsLeftContainer, .aboutUsRightContainer{
+        max-width: 100%;
+    }
+    .chefsImagesContainer{
+        flex-wrap: wrap;
+        height: fit-content;
+    }
 
 }
+@media screen and (max-width: 450px) {
+    .galleryGridCell1{
+        display:none;
+    }
+    .heroSectionContainer{
+        background-position:center;
+    }
+    .callToActionHeader{
+        font-size: 4rem;
+        color:white;
+        text-align: center;
+    }
+    .callToActionSecondHeader{
+        color:white;
+        padding-bottom:1rem ;
+    }
+    .saladHeroImage{
+        width: 300px;
+    }
+    .heroSectionContainer {
+        background-position: right;  
+    }
+    .callActionButton{
+        background-color: var(--gold-borders);
+    }
+    .containerReservationForms input{
+        max-width: 9rem;
+    }
+    .containerReservationForms label{
+        font-size: 0.8rem;
+    }
+    .callToActionContainer{
+        justify-content: center;
+        height:fit-content;
+        margin-top:4rem;
+
+    }
+
 }
 @media  (min-width: 700px) and (max-width: 1200px) {
     .galleryGridCell {
-      max-width: 16rem; 
+      width: 14rem; 
     
     }
+    .callToActionParagraph,.callToActionHeader{
+        text-align: center;
+    }
 
+    .gallerySectionContainer{
+        justify-content: center;
+    }
+    .galleryGridCell1{
+        display: none;
+        
+    }
  
     .galleryGridContainer{
         grid-template-columns: 1fr 1fr ;
@@ -1155,7 +1398,7 @@ body{
     .galleryGridContainer div:last-child{
         display: none;
     }
-    .drinks_container, .food_container {
+    .product_container {
         grid-template-columns: 1fr 1fr ;
         grid-template-rows:auto;
 
@@ -1165,36 +1408,34 @@ body{
         gap:4rem;
     }
 
-    .carouselImageContainer0, .carouselImageContainer1,.carouselImageContainer2{
-        display: none;
-    }
-    .carouselImageContainer0, .carouselTextAndTitleContainer0 ,
-    .carouselImageContainer1, .carouselTextAndTitleContainer1,
-    .carouselImageContainer2, .carouselTextAndTitleContainer2,.slide{
+
+    .carouselImageContainer, .carouselTextAndTitleContainer{
         width: 100%;
     }
 
 
   
     .aboutUsRightContainer{
-        border: 0;
+       padding-left: 3rem;
     }
-    .aboutUsLeftContainer, .aboutUsRightContainer{
-        max-width: 100%
-    }
+
     .titlesAboutUs{
         text-align: center;
     }
     .aboutUsLeftContainer{
         padding: 1rem;
     }
-    .aboutUsDescription::first-letter{
-        margin-left: 0rem;
-    }
+
     .footerContainer{
         font-size: 1rem;
     }
-    .socialMediaIcons_white{
+    .socialMediaIcons{
         font-size: 2rem;
+    }
+    .chefImage{
+        max-width: 12rem;
+    }
+    .containerAboutUs{
+        width: fit-content;
     }
   }
