@@ -1,7 +1,7 @@
 
 const data =[
     {image:"./images/welcomeImages/welcomeImageOne.jpg",title:"Chefs Excellency", description:"Elevate your brunch experience with our Chefs Excellency. Our culinary artisans craft each dish with passion and precision, delivering a symphony of flavors that redefine brunch excellence."},
-    {image:"./images/welcomeImages/welcomeImageTwo.jpg",title:"Fresh Products", description:"Savor the taste of freshness at our beachfront restaurant. We source only the finest, locally-sourced ingredients to create a menu bursting with vibrant flavors."},
+    {image:"./images/welcomeImages/welcomeImageTwo.jpg",title:"Fresh Products", description:"Savor the essence of freshness at our seaside eatery. We meticulously select the finest, locally-sourced ingredients, expertly curating a menu that bursts with vibrant flavors and culinary delights."},
     {image:"./images/welcomeImages/welcomeImageThree.jpg",title:"Perfect Location",description: "Indulge in brunch bliss with the perfect backdrop. Nestled on the sun-kissed beaches of California, our restaurant offers panoramic views of the ocean, creating an idyllic setting for a leisurely brunch."},
 ]
 
@@ -13,6 +13,8 @@ export const welcomePage = ( ) => {
     const welcomeCardsParagraph = []
     const welcomeCardsButton = []
     const welcomeCardsImageContainer = []
+    const welcomeCardsContainerButton = []
+    const welcomeCardsTextContainer = []
 
     const mainContainer = document.querySelector('.body');
            
@@ -95,20 +97,33 @@ export const welcomePage = ( ) => {
     welcomeCardsImageContainer[index].appendChild(welcomeCardsImage[index]); 
     welcomeCardsImage[index].src = card.image
 
+    welcomeCardsTextContainer[index] = document.createElement('div');
+    welcomeCardsTextContainer[index].classList.add( "welcomeCardsTextContainer");
+    welcomeCards[index].appendChild(welcomeCardsTextContainer[index]); 
+
+
+
     welcomeCardsHeader[index] = document.createElement('h3');
     welcomeCardsHeader[index].classList = "welcomeCardsHeader";
-    welcomeCards[index].appendChild(welcomeCardsHeader[index]); 
+    welcomeCardsTextContainer[index].appendChild(welcomeCardsHeader[index]); 
     welcomeCardsHeader[index].textContent = card.title
 
     welcomeCardsParagraph[index] = document.createElement('p');
     welcomeCardsParagraph[index].classList = "welcomeCardsParagraph";
-    welcomeCards[index].appendChild(welcomeCardsParagraph[index]); 
+    welcomeCardsTextContainer[index].appendChild(welcomeCardsParagraph[index]); 
     welcomeCardsParagraph[index].textContent = card.description;
+
+
+    welcomeCardsContainerButton[index] = document.createElement('div');
+    welcomeCardsContainerButton[index].classList.add( "welcomeCardsContainerButton");
+    welcomeCards[index].appendChild(welcomeCardsContainerButton[index]); 
+
+
 
     welcomeCardsButton[index] = document.createElement('button');
     welcomeCardsButton[index].classList.add( "all_button");
     welcomeCardsButton[index].classList.add( "welcomeCardsButton");
-    welcomeCards[index].appendChild(welcomeCardsButton[index]); 
+    welcomeCardsContainerButton[index].appendChild(welcomeCardsButton[index]); 
     welcomeCardsButton[index].textContent = "Read More"
 
     })
